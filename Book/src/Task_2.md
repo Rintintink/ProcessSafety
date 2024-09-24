@@ -1,9 +1,9 @@
-# Task 2 - Object presence check
+# Task 2 - Object detection check
 
 ```plantuml
 
 @startuml
-[*] --> Idle : System Initialized
+[*] --> Idle : System Started
 
 Idle --> DetectObject : Timer Event
 DetectObject --> Alarm : Object Missing
