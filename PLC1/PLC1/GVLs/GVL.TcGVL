@@ -8,16 +8,16 @@ VAR_GLOBAL
 
 // -----------------------------------------Ingangen	
 // Digitale Ingangen
-	In0Res AT%IB00 : BOOL := 0;  //Reserve
-	In1Res AT%IB01 : BOOL := 0;  //Reserve
-	In2Res AT%IB02 : BOOL := 0;  //Reserve
-	In3Res AT%IB03 : BOOL := 0;  //Reserve 
-	In4Res AT%IB04 : BOOL := 0;  //Reserve 
-	In5Res AT%IB05 : BOOL := 0;  //Reserve 
-	In6Res AT%IB06 : BOOL := 0;  //Reserve
-	In7Res AT%IB07 : BOOL := 0;  //Reserve 
-	In8Res AT%IB08 : BOOL := 0;  //Reserve 
-	In9Res AT%IB09 : BOOL := 0;  //Reserve
+	In0Res AT%IX0.0 : BOOL := 0;  //Reserve
+	In1Res AT%IX0.1 : BOOL := 0;  //Reserve
+	In2Res AT%IX0.2 : BOOL := 0;  //Reserve
+	In3Res AT%IX0.3 : BOOL := 0;  //Reserve 
+	In4Res AT%IX0.4 : BOOL := 0;  //Reserve 
+	In5Res AT%IX0.5 : BOOL := 0;  //Reserve 
+	In6Res AT%IX0.6 : BOOL := 0;  //Reserve
+	In7Res AT%IX0.7 : BOOL := 0;  //Reserve 
+	In8Res AT%IX1.0 : BOOL := 0;  //Reserve 
+	In9Res AT%IX1.1 : BOOL := 0;  //Reserve
 	
 // Analoge ingangen 
 	weegcelWaarde AT%IW10 : DINT := 0;  //ingelezen gewicht van de lading 
@@ -33,16 +33,16 @@ VAR_GLOBAL
 	
 // -----------------------------------------Uitgangen
 // Digitale Uitgangen
-	Uit0Res AT%QB00 : BOOL := 0;  //Reserve
-	Uit1Res AT%QB01 : BOOL := 0;  //Reserve 
-	Uit2Res AT%QB02 : BOOL := 0;  //Reserve
-	Uit3Res AT%QB03 : BOOL := 0;  //Reserve
-	Uit4Res AT%QB04 : BOOL := 0;  //Reserve
-	Uit5Res AT%QB05 : BOOL := 0;  //Reserve
-	Uit6Res AT%QB06 : BOOL := 0;  //Reserve
-	Uit7Res AT%QB07 : BOOL := 0;  //Reserve
-	Uit8Res AT%QB08 : BOOL := 0;  //Reserve
-	Uit9Res AT%QB09 : BOOL := 0;  //Reserve
+	Uit0Res AT%QX0.0 : BOOL := 0;  //Reserve
+	Uit1Res AT%QX0.1 : BOOL := 0;  //Reserve 
+	Uit2Res AT%QX0.2 : BOOL := 0;  //Reserve
+	Uit3Res AT%QX0.3 : BOOL := 0;  //Reserve
+	Uit4Res AT%QX0.4 : BOOL := 0;  //Reserve
+	Uit5Res AT%QX0.5 : BOOL := 0;  //Reserve
+	Uit6Res AT%QX0.6 : BOOL := 0;  //Reserve
+	Uit7Res AT%QX0.7 : BOOL := 0;  //Reserve
+	Uit8Res AT%QX1.0 : BOOL := 0;  //Reserve
+	Uit9Res AT%QX1.1 : BOOL := 0;  //Reserve
 	
 // Analoge Uitgangen 
 	geschrevenSnelheid AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
