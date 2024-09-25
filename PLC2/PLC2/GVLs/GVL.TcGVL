@@ -8,8 +8,8 @@ VAR_GLOBAL
 
 // -----------------------------------------Ingangen	
 // Digitale Ingangen
-	In0Res AT%IX0.0 : BOOL := 0;  //Reserve
-	In1Res AT%IX0.1 : BOOL := 0;  //Reserve
+	systeemStartKnop AT%IX0.0 : BOOL := 0;  // systeem opstartknop
+	LS_001 AT%IX0.1 : BOOL := 0;  //objectdetectie sensor
 	In2Res AT%IX0.2 : BOOL := 0;  //Reserve
 	In3Res AT%IX0.3 : BOOL := 0;  //Reserve 
 	In4Res AT%IX0.4 : BOOL := 0;  //Reserve 
@@ -58,9 +58,41 @@ VAR_GLOBAL
 
 
 // Globale Variabelen
-	ladingGewicht AT%MW10 : DINT := 0; //opslag gelezen gewicht 
+// Bool Statussen
+	systeemStatus 	AT%MX0.0 : BOOL := 0; // 0 = uit, 1 = actief
+	objectDetected	AT%MX0.1 : BOOL := 0;
+	
+// DINT opslag
+	ladingGewicht 	AT%MW10 : DINT := 0; //opslag gelezen gewicht
+	 
+	
+	
 
 	
-END_VAR]]></Declaration>
+END_VAR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></Declaration>
   </GVL>
 </TcPlcObject>

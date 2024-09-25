@@ -15,7 +15,8 @@ mid := gelezenGewicht / 2;
 berekendeSnelheid := mid * 4;
 
 //uitsturen waarde
-FC1_Bereken_Snelheid := berekendeSnelheid;]]></ST>
+FC1_Bereken_Snelheid := berekendeSnelheid;
+]]></ST>
     </Implementation>
     <LineIds Name="FC1_Bereken_Snelheid">
       <LineId Id="14" Count="1" />
@@ -23,6 +24,7 @@ FC1_Bereken_Snelheid := berekendeSnelheid;]]></ST>
       <LineId Id="25" Count="0" />
       <LineId Id="24" Count="0" />
       <LineId Id="16" Count="0" />
+      <LineId Id="36" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -7,7 +7,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[GVL.ladingGewicht := GVL.weegcelWaarde;									
-GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);	]]></ST>
+GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
       <LineId Id="6" Count="0" />
