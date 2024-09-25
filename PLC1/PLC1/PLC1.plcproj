@@ -24,7 +24,13 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FC1_Bereken_Snelheid.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\POU.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG1_Conveyer_Operation.TcPOU">

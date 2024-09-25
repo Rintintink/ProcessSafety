@@ -6,10 +6,18 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[
+// bereken snelheid
+
+GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.weegcelWaarde);
+]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
+      <LineId Id="8" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="11" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

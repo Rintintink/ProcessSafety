@@ -20,7 +20,7 @@ VAR_GLOBAL
 	In9Res AT%IB09 : BOOL := 0;  //Reserve
 	
 // Analoge ingangen 
-	In10Res AT%IW10 : DINT := 0;  //Reserve 
+	weegcelWaarde AT%IW10 : DINT := 0;  //gelezen gewicht van de lading 
 	In11Res AT%IW11 : DINT := 0;  //Reserve 
 	In12Res AT%IW12 : DINT := 0;  //Reserve 
 	In13Res AT%IW13 : DINT := 0;  //Reserve 
@@ -45,7 +45,7 @@ VAR_GLOBAL
 	Uit9Res AT%QB09 : BOOL := 0;  //Reserve
 	
 // Analoge Uitgangen 
-	Uit10Res AT%QW10 : DINT := 0;  //Reserve
+	geschrevenSnelheid AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
 	Uit11Res AT%QW11 : DINT := 0;  //Reserve
 	Uit12Res AT%QW12 : DINT := 0;  //Reserve
 	Uit13Res AT%QW13 : DINT := 0;  //Reserve

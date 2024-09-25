@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FC1_Bereken_Snelheid" Id="{96517e6c-c61b-4dd5-868e-97d2735376b2}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION FC1_Bereken_Snelheid : DINT
+VAR_INPUT
+	gelezenGewicht : DINT := 0;
+END_VAR
+VAR
+	mid : DINT := 0;
+	berekendeSnelheid : DINT := 0;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+mid := gelezenGewicht / 5;
+berekendeSnelheid := mid * 6;]]></ST>
+    </Implementation>
+    <LineIds Name="FC1_Bereken_Snelheid">
+      <LineId Id="15" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
