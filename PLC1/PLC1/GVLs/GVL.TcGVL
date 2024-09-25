@@ -20,7 +20,7 @@ VAR_GLOBAL
 	In9Res AT%IB09 : BOOL := 0;  //Reserve
 	
 // Analoge ingangen 
-	weegcelWaarde AT%IW10 : DINT := 0;  //gelezen gewicht van de lading 
+	weegcelWaarde AT%IW10 : DINT := 0;  //ingelezen gewicht van de lading 
 	In11Res AT%IW11 : DINT := 0;  //Reserve 
 	In12Res AT%IW12 : DINT := 0;  //Reserve 
 	In13Res AT%IW13 : DINT := 0;  //Reserve 
@@ -58,7 +58,7 @@ VAR_GLOBAL
 
 
 // Globale Variabelen
-
+	ladingGewicht AT%MW10 : DINT := 0; //opslag gelezen gewicht 
 
 END_VAR]]></Declaration>
   </GVL>
