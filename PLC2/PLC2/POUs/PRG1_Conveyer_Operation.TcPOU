@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG1_Conveyer_Operation" Id="{fa1e73bd-a5a7-4194-991b-8213e2bc5537}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL.ladingGewicht := GVL.weegcelWaarde;									
+GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);	]]></ST>
+    </Implementation>
+    <LineIds Name="PRG1_Conveyer_Operation">
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

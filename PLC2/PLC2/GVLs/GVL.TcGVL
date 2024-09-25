@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{13d9146a-82f7-41f5-a96b-0568832bb870}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+
+// Hele rits aan variabelen
+
+// -----------------------------------------Ingangen	
+// Digitale Ingangen
+	In0Res AT%IX0.0 : BOOL := 0;  //Reserve
+	In1Res AT%IX0.1 : BOOL := 0;  //Reserve
+	In2Res AT%IX0.2 : BOOL := 0;  //Reserve
+	In3Res AT%IX0.3 : BOOL := 0;  //Reserve 
+	In4Res AT%IX0.4 : BOOL := 0;  //Reserve 
+	In5Res AT%IX0.5 : BOOL := 0;  //Reserve 
+	In6Res AT%IX0.6 : BOOL := 0;  //Reserve
+	In7Res AT%IX0.7 : BOOL := 0;  //Reserve 
+	In8Res AT%IX1.0 : BOOL := 0;  //Reserve 
+	In9Res AT%IX1.1 : BOOL := 0;  //Reserve
+	
+// Analoge ingangen 
+	weegcelWaarde AT%IW10 : DINT := 0;  //ingelezen gewicht van de lading 
+	In11Res AT%IW12 : DINT := 0;  //Reserve 
+	In12Res AT%IW14 : DINT := 0;  //Reserve 
+	In13Res AT%IW16 : DINT := 0;  //Reserve 
+	In14Res AT%IW18 : DINT := 0;  //Reserve 
+	In15Res AT%IW20 : DINT := 0;  //Reserve 
+	In16Res AT%IW22 : DINT := 0;  //Reserve
+	In17Res AT%IW24 : DINT := 0;  //Reserve
+	In18Res AT%IW26 : DINT := 0;  //Reserve
+	In19Res AT%IW28 : DINT := 0;  //Reserve
+	
+// -----------------------------------------Uitgangen
+// Digitale Uitgangen
+	Uit0Res AT%QX0.0 : BOOL := 0;  //Reserve
+	Uit1Res AT%QX0.1 : BOOL := 0;  //Reserve 
+	Uit2Res AT%QX0.2 : BOOL := 0;  //Reserve
+	Uit3Res AT%QX0.3 : BOOL := 0;  //Reserve
+	Uit4Res AT%QX0.4 : BOOL := 0;  //Reserve
+	Uit5Res AT%QX0.5 : BOOL := 0;  //Reserve
+	Uit6Res AT%QX0.6 : BOOL := 0;  //Reserve
+	Uit7Res AT%QX0.7 : BOOL := 0;  //Reserve
+	Uit8Res AT%QX1.0 : BOOL := 0;  //Reserve
+	Uit9Res AT%QX1.1 : BOOL := 0;  //Reserve
+	
+// Analoge Uitgangen 
+	geschrevenSnelheid AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
+	Uit11Res AT%QW12 : DINT := 0;  //Reserve
+	Uit12Res AT%QW14 : DINT := 0;  //Reserve
+	Uit13Res AT%QW16 : DINT := 0;  //Reserve
+	Uit14Res AT%QW18 : DINT := 0;  //Reserve
+	Uit15Res AT%QW20 : DINT := 0;  //Reserve
+	Uit16Res AT%QW22 : DINT := 0;  //Reserve
+	Uit17Res AT%QW24 : DINT := 0;  //Reserve
+	Uit18Res AT%QW26 : DINT := 0;  //Reserve 
+	Uit19Res AT%QW28 : DINT := 0;  //Reserve
+
+
+// Globale Variabelen
+	ladingGewicht AT%MW10 : DINT := 0; //opslag gelezen gewicht 
+
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
