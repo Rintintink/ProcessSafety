@@ -3,26 +3,40 @@
   <POU Name="FC1_Bereken_Snelheid" Id="{12de46b1-cd22-4bee-b0d4-4edb4530f63f}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION FC1_Bereken_Snelheid : DINT
 VAR_INPUT
-	gelezenGewicht : DINT := 0;
+    Laadgewicht : DINT;    // Invoer van de weegcel
+    MinLaad     : DINT;    // Minimum laadgewicht (lege transportband)
+    MaxLaad     : DINT;    // Maximum laadgewicht (volgeladen transportband)
+    MinSnelheid : REAL;    // Minimum transportbandsnelheid (langzaamst)
+    MaxSnelheid : REAL;    // Maximum transportbandsnelheid (snelst)
 END_VAR
+
 VAR
-	mid : DINT := 0;
-	berekendeSnelheid : DINT := 0;
+    LaadRatio   : REAL;    // Proportionele waarde van het laadgewicht
+    BerekendeSnelheid : REAL; // De berekende snelheid in REAL
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-mid := gelezenGewicht / 2;
-berekendeSnelheid := mid * 4;
 
-//uitsturen waarde
-FC1_Bereken_Snelheid := berekendeSnelheid;
+// Zorg ervoor dat Laadgewicht binnen de grenzen valt
+IF Laadgewicht < MinLaad THEN
+    Laadgewicht := MinLaad;
+ELSIF Laadgewicht > MaxLaad THEN
+    Laadgewicht := MaxLaad;
+END_IF
+
+// Bereken de laadratio als percentage van het maximale laadgewicht
+LaadRatio := (Laadgewicht - MinLaad) / (MaxLaad - MinLaad);
+
+// Bereken de transportbandsnelheid op basis van de laadratio
+BerekendeSnelheid := MaxSnelheid - (LaadRatio * (MaxSnelheid - MinSnelheid));
+
+// Rond de berekende snelheid af naar een DINT waarde en retourneer deze
+FC1_Bereken_Snelheid := DINT_TO_INT(REAL_TO_DINT(BerekendeSnelheid));
 ]]></ST>
     </Implementation>
     <LineIds Name="FC1_Bereken_Snelheid">
-      <LineId Id="14" Count="1" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="24" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="465" Count="14" />
       <LineId Id="16" Count="0" />
       <LineId Id="36" Count="0" />
     </LineIds>

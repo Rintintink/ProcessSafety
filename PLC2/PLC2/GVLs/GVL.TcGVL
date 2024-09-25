@@ -21,8 +21,8 @@ VAR_GLOBAL
 	
 // Analoge ingangen 
 	weegcelWaarde AT%IW10 : DINT := 0;  //ingelezen gewicht van de lading 
-	In11Res AT%IW12 : DINT := 0;  //Reserve 
-	In12Res AT%IW14 : DINT := 0;  //Reserve 
+	In11Res AT%IW12 : DINT := 0;  //Reserve
+	In12Res AT%IW14 : DINT := 0;  //Reserve
 	In13Res AT%IW16 : DINT := 0;  //Reserve 
 	In14Res AT%IW18 : DINT := 0;  //Reserve 
 	In15Res AT%IW20 : DINT := 0;  //Reserve 
@@ -62,13 +62,17 @@ VAR_GLOBAL
 	systeemStatus 	AT%MX0.0 : BOOL := 0; // 0 = uit, 1 = actief
 	objectDetected	AT%MX0.1 : BOOL := 0;
 	
-// DINT opslag
-	ladingGewicht 	AT%MW10 : DINT := 0; //opslag gelezen gewicht
+// INT&DINT opslag
+	PRG1_OperatieModus	AT%MW10 : INT := 0; // 0 = idle, 1 = running, 2 = fault	
+	ladingGewicht 		AT%MW12 : DINT := 0; //opslag gelezen gewicht
+	minimumLading 		AT%MW14 : DINT := 0; // minimumlading op conveyer
+	maximumLading 		AT%MW16 : DINT := 0; // maximumlading op conveyer
+	minimumSnelheid		AT%MW18 : REAL := 0; // minimumsnelheid van conveyer
+	maximumSnelheid		AT%MW20 : REAL := 0; // maximumsnelheid van conveyer
+	
+	
 	 
-	
-	
-
-	
+	 
 END_VAR
 
 

@@ -10,19 +10,19 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{27101B30-0734-6AFC-B3FB-8A536580B3F9}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{49137852-8BFE-B7D8-4BFE-9C2B532656AE}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>GVL.systeemStartKnop</Name>
+							<Name>GVL.KN_001</Name>
 							<Comment><![CDATA[ systeem opstartknop]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In1Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[Reserve ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
@@ -41,8 +41,8 @@
 							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.In5Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Name>GVL.LS_001</Name>
+							<Comment><![CDATA[ objectdetectie sensor ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
@@ -72,12 +72,12 @@
 						</Var>
 						<Var>
 							<Name>GVL.In11Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In12Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
