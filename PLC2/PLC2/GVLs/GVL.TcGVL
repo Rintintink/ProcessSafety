@@ -8,8 +8,8 @@ VAR_GLOBAL
 
 // -----------------------------------------Ingangen	
 // Digitale Ingangen
-	systeemStartKnop AT%IX0.0 : BOOL := 0;  // systeem opstartknop
-	LS_001 AT%IX0.1 : BOOL := 0;  //objectdetectie sensor
+	KN_001 AT%IX0.0 : BOOL := 0;  // systeem opstartknop
+	LS_001 AT%IX0.1 : BOOL := 0;  // objectdetectie sensor
 	In2Res AT%IX0.2 : BOOL := 0;  //Reserve
 	In3Res AT%IX0.3 : BOOL := 0;  //Reserve 
 	In4Res AT%IX0.4 : BOOL := 0;  //Reserve 
