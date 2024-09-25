@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG2_Object_Detection" Id="{e2c7d67f-cf17-4fff-92d2-d8b3d11a25b3}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG2_Object_Detection
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="PRG2_Object_Detection">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
