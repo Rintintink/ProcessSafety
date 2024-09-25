@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{4b8bdf67-556f-4fe5-8a8f-3e1a95f1fa5f}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+
+// Hele rits aan 
+
+// -----------------------------------------Ingangen	
+// Digitale Ingangen
+	In0Res AT%IB00 : BOOL := 0;  //Reserve
+	In1Res AT%IB01 : BOOL := 0;  //Reserve
+	In2Res AT%IB02 : BOOL := 0;  //Reserve
+	In3Res AT%IB03 : BOOL := 0;  //Reserve 
+	In4Res AT%IB04 : BOOL := 0;  //Reserve 
+	In5Res AT%IB05 : BOOL := 0;  //Reserve 
+	In6Res AT%IB06 : BOOL := 0;  //Reserve
+	In7Res AT%IB07 : BOOL := 0;  //Reserve 
+	In8Res AT%IB08 : BOOL := 0;  //Reserve 
+	In9Res AT%IB09 : BOOL := 0;  //Reserve
+	
+// Analoge ingangen 
+	In10Res AT%IW10 : DINT := 0;  //Reserve 
+	In11Res AT%IW11 : DINT := 0;  //Reserve 
+	In12Res AT%IW12 : DINT := 0;  //Reserve 
+	In13Res AT%IW13 : DINT := 0;  //Reserve 
+	In14Res AT%IW14 : DINT := 0;  //Reserve 
+	In15Res AT%IW15 : DINT := 0;  //Reserve 
+	In16Res AT%IW16 : DINT := 0;  //Reserve
+	In17Res AT%IW17 : DINT := 0;  //Reserve
+	In18Res AT%IW18 : DINT := 0;  //Reserve
+	In19Res AT%IW19 : DINT := 0;  //Reserve
+	
+// -----------------------------------------Uitgangen
+// Digitale Uitgangen
+	Uit0Res AT%QB00 : BOOL := 0;  //Reserve
+	Uit1Res AT%QB01 : BOOL := 0;  //Reserve 
+	Uit2Res AT%QB02 : BOOL := 0;  //Reserve
+	Uit3Res AT%QB03 : BOOL := 0;  //Reserve
+	Uit4Res AT%QB04 : BOOL := 0;  //Reserve
+	Uit5Res AT%QB05 : BOOL := 0;  //Reserve
+	Uit6Res AT%QB06 : BOOL := 0;  //Reserve
+	Uit7Res AT%QB07 : BOOL := 0;  //Reserve
+	Uit8Res AT%QB08 : BOOL := 0;  //Reserve
+	Uit9Res AT%QB09 : BOOL := 0;  //Reserve
+	
+// Analoge Uitgangen 
+	Uit10Res AT%QW10 : DINT := 0;  //Reserve
+	Uit11Res AT%QW11 : DINT := 0;  //Reserve
+	Uit12Res AT%QW12 : DINT := 0;  //Reserve
+	Uit13Res AT%QW13 : DINT := 0;  //Reserve
+	Uit14Res AT%QW14 : DINT := 0;  //Reserve
+	Uit15Res AT%QW15 : DINT := 0;  //Reserve
+	Uit16Res AT%QW16 : DINT := 0;  //Reserve
+	Uit17Res AT%QW17 : DINT := 0;  //Reserve
+	Uit18Res AT%QW18 : DINT := 0;  //Reserve 
+	Uit19Res AT%QW19 : DINT := 0;  //Reserve
+
+
+// Globale Variabelen
+
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

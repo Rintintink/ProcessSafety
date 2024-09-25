@@ -6,19 +6,23 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Call Programs
-
+      <ST><![CDATA[
+// Call Programs
 PRG1_Conveyer_Operation();
+PRG2_Object_Detection();
+
 
 
 
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="15" Count="0" />
       <LineId Id="2" Count="0" />
-      <LineId Id="7" Count="0" />
       <LineId Id="6" Count="0" />
-      <LineId Id="12" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="14" Count="0" />
       <LineId Id="11" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="8" Count="0" />
