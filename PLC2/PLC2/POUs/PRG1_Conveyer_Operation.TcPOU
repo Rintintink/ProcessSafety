@@ -6,10 +6,16 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL.ladingGewicht := GVL.weegcelWaarde;									
+      <ST><![CDATA[
+//case functie, voor conveyerstatussen
+
+GVL.ladingGewicht := GVL.weegcelWaarde;									
 GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
       <LineId Id="6" Count="0" />
       <LineId Id="5" Count="0" />
     </LineIds>
