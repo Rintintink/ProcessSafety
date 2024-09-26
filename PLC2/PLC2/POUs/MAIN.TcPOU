@@ -8,20 +8,29 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-//GVL.systeemStatus := GVL.KN_001;
-//IF GVL.PRG1_OperatieModus = 0 THEN
-//	Modus := "Idle";
-//ELSIF GVL.PRG1_OperatieModus = 1 THEN
-	//Modus := "Running";
-//ELSIF GVL.PRG1_OperatieModus = 2 THEN
-	//Modus := "Fault";
-//END_IF
+GVL.systeemStatus := GVL.KN_001;
+PRG1_Conveyer_Operation();
+PRG2_Object_Detectie();
+
+IF GVL.PRG1_OperatieModus = 0 THEN
+	
+	Modus := "OFF";
+	
+ELSIF GVL.PRG1_OperatieModus = 1 THEN
+	
+	Modus := "IDLE";
+	
+ELSIF GVL.PRG1_OperatieModus = 2 THEN
+	
+	Modus := "Fault";
+	
+END_IF
 //
 //WHILE GVL.systeemStatus DO
 	//PRG1_Conveyer_Operation();
 //END_WHILE
 
-PRG2_Object_Detectie();
+
 
 
 ]]></ST>
@@ -29,10 +38,19 @@ PRG2_Object_Detectie();
     <LineIds Name="MAIN">
       <LineId Id="41" Count="0" />
       <LineId Id="14" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="50" Count="0" />
       <LineId Id="24" Count="1" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="54" Count="0" />
       <LineId Id="27" Count="0" />
-      <LineId Id="29" Count="1" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="30" Count="0" />
       <LineId Id="36" Count="0" />
+      <LineId Id="57" Count="1" />
       <LineId Id="26" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="16" Count="0" />
