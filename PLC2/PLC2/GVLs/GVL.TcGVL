@@ -33,8 +33,8 @@ VAR_GLOBAL
 	
 // -----------------------------------------Uitgangen
 // Digitale Uitgangen
-	transportActief AT%QX0.0 : BOOL := 0;  //transportbaan aangezet signaal
-	alarmActief AT%QX0.1 : BOOL := 0;  //alarm melding
+	transportActief 	AT%QX0.0 : BOOL := 0;  //transportbaan aangezet signaal
+	alarmActief 		AT%QX0.1 : BOOL := 0;  //alarm melding
 	Uit2Res AT%QX0.2 : BOOL := 0;  //Reserve
 	Uit3Res AT%QX0.3 : BOOL := 0;  //Reserve
 	Uit4Res AT%QX0.4 : BOOL := 0;  //Reserve
