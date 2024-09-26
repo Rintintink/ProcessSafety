@@ -3,36 +3,14 @@
   <POU Name="MAIN" Id="{08eb5067-a124-4fda-bdc0-191f359724d7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	Modus: WSTRING(INT#8) := "OFF";
+	Modus: STRING(INT#8) := 'OFF';
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-IF GVL.KN_001 THEN
-	GVL.systeemStatus := 1;	
-ELSE
-	GVL.systeemStatus := 0;
-END_IF
+      <ST><![CDATA[PRG2_Object_Detectie();
 
-WHILE GVL.systeemStatus = 1 DO
-	
-	PRG1_Conveyer_Operation();
-	PRG2_Object_Detectie();
-	
-	IF GVL.PRG1_OperatieModus = 0 THEN
-		
-		Modus := "OFF";
-		
-	ELSIF GVL.PRG1_OperatieModus = 1 THEN
-		
-		Modus := "IDLE";
-		
-	ELSIF GVL.PRG1_OperatieModus = 2 THEN
-		
-		Modus := "Fault";
-		
-	END_IF
-END_WHILE
+
+
 
 //
 //WHILE GVL.systeemStatus DO
@@ -45,17 +23,10 @@ END_WHILE
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="41" Count="0" />
-      <LineId Id="61" Count="2" />
-      <LineId Id="84" Count="0" />
-      <LineId Id="83" Count="0" />
-      <LineId Id="64" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="67" Count="0" />
-      <LineId Id="82" Count="0" />
-      <LineId Id="68" Count="13" />
-      <LineId Id="65" Count="1" />
-      <LineId Id="26" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="103" Count="1" />
+      <LineId Id="66" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="2" Count="0" />

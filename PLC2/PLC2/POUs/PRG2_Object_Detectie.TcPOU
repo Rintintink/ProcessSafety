@@ -13,7 +13,6 @@ END_VAR]]></Declaration>
 // lezen ingangen
 ObjectAanwezig := GVL.LS_001; 
 
-
 // Controleer of een object aanwezig is op de transportband
 IF ObjectAanwezig = TRUE THEN
     // Object gedetecteerd, reset de wachttijd en schakel het alarm uit
@@ -30,10 +29,10 @@ ELSE
 END_IF
 
 // stuur object-/alarmstatus naar PRG1
-PRG1_Conveyer_Operation.objectMissing := AlarmStatus;
+//PRG1_Conveyer_Operation.objectMissing := AlarmStatus;
 
 //stuur statussen naar GVL.
-GVL.objectDetected  := ObjectAanwezig;
+GVL.objectDetected  :=  ObjectAanwezig;
 GVL.ALM001 			:= 	AlarmStatus; // schrijven in geheugen voor OPC/SCADA of weet ik het wat nog meer.
 GVL.alarmActief 	:= 	AlarmStatus; // sturen naar digitale uitgang
 ]]></ST>
@@ -41,7 +40,6 @@ GVL.alarmActief 	:= 	AlarmStatus; // sturen naar digitale uitgang
     <LineIds Name="PRG2_Object_Detectie">
       <LineId Id="41" Count="1" />
       <LineId Id="12" Count="0" />
-      <LineId Id="35" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="14" Count="12" />
       <LineId Id="54" Count="0" />

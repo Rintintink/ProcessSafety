@@ -14,16 +14,16 @@ END_VAR
 // 2 = RUNNING
 // 3 = FAULT
 
-CASE GVL.PRG1_OperatieModus OF
-	0:	//OFF, wacht op startknop
-				 
-	1:	//idle, wacht op object
+//CASE GVL.PRG1_OperatieModus OF
+//	0:	//OFF, wacht op startknop
+			 
+//	1:	//idle, wacht op object
 
-	2:	//running
-		GVL.ladingGewicht := GVL.	weegcelWaarde;									
-		GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
+//	2:	//running
+//		GVL.ladingGewicht := GVL.	weegcelWaarde;									
+//		GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
 
-END_CASE
+//END_CASE
 //case functie, voor conveyerstatussen
 
 IF objectMissing THEN
@@ -31,21 +31,8 @@ IF objectMissing THEN
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
-      <LineId Id="36" Count="0" />
-      <LineId Id="47" Count="3" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="26" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="55" Count="0" />
-      <LineId Id="52" Count="2" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="41" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="44" Count="1" />
+      <LineId Id="66" Count="19" />
+      <LineId Id="45" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
