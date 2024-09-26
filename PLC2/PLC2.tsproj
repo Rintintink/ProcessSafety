@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{49137852-8BFE-B7D8-4BFE-9C2B532656AE}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{E7E4570D-38BA-F4F0-F68E-20F3D4D48B22}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -119,13 +119,13 @@
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL.Uit0Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Name>GVL.transportActief</Name>
+							<Comment><![CDATA[transportbaan aangezet signaal]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.Uit1Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Name>GVL.alarmActief</Name>
+							<Comment><![CDATA[alarm melding]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>

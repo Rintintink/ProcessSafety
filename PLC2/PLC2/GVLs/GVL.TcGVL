@@ -33,8 +33,8 @@ VAR_GLOBAL
 	
 // -----------------------------------------Uitgangen
 // Digitale Uitgangen
-	Uit0Res AT%QX0.0 : BOOL := 0;  //Reserve
-	Uit1Res AT%QX0.1 : BOOL := 0;  //Reserve 
+	transportActief AT%QX0.0 : BOOL := 0;  //transportbaan aangezet signaal
+	alarmActief AT%QX0.1 : BOOL := 0;  //alarm melding
 	Uit2Res AT%QX0.2 : BOOL := 0;  //Reserve
 	Uit3Res AT%QX0.3 : BOOL := 0;  //Reserve
 	Uit4Res AT%QX0.4 : BOOL := 0;  //Reserve
@@ -61,6 +61,7 @@ VAR_GLOBAL
 // Bool Statussen
 	systeemStatus 	AT%MX0.0 : BOOL := 0; // 0 = uit, 1 = actief
 	objectDetected	AT%MX0.1 : BOOL := 0;
+	ALM001			AT%MX0.5 : BOOL := 0; //missend object - alarm
 	
 // INT&DINT opslag
 	PRG1_OperatieModus	AT%MW10 : INT := 0; // 0 = idle, 1 = running, 2 = fault	

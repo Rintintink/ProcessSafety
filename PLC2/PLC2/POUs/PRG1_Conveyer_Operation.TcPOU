@@ -3,25 +3,31 @@
   <POU Name="PRG1_Conveyer_Operation" Id="{fa1e73bd-a5a7-4194-991b-8213e2bc5537}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
 VAR
-	state: INT;
+	objectMissing : BOOL;
+	status : INT ; 
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-CASE GVL.PRG1_OperatieModus OF
-	0:	//idle, wacht op object
-		 
-	1:	//running
-		GVL.ladingGewicht := GVL.weegcelWaarde;									
-		GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
-	2:	//
+
+//CASE GVL.PRG1_OperatieModus OF
+//	0:	//idle, wacht op object
+//		 
+//	1:	//running
+//		GVL.ladingGewicht := GVL.	weegcelWaarde;									
+//		GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
+//	2:	//
 			
 
-END_CASE
+//END_CASE
 //case functie, voor conveyerstatussen
-]]></ST>
+
+IF objectMissing THEN
+	State := 3;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
+      <LineId Id="36" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="19" Count="0" />
@@ -34,7 +40,9 @@ END_CASE
       <LineId Id="22" Count="0" />
       <LineId Id="20" Count="0" />
       <LineId Id="12" Count="0" />
+      <LineId Id="41" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="44" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG2_Object_Detectie" Id="{582db3f0-3a0b-4d59-91c1-6e5fa4d01714}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG2_Object_Detectie
+VAR
+    ObjectAanwezig : BOOL;    			// Invoer van de sensor, TRUE als object gedetecteerd
+    AlarmStatus    : BOOL;    			// Uitvoer, TRUE als er geen object is gedetecteerd
+    MaxWachttijd   : TIME := T#1M;    	// Maximale tijd om te wachten op een object
+    Wachttijd      : TIME;    			// Huidig wachttijd zonder objectdetectie
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// lezen ingangen
+ObjectAanwezig := GVL.LS_001; 
+
+// Controleer of een object aanwezig is op de transportband
+IF ObjectAanwezig = TRUE THEN
+    // Object gedetecteerd, reset de wachttijd en schakel het alarm uit
+	
+    Wachttijd := T#0s;
+    AlarmStatus := FALSE;
+ELSE
+    // Geen object gedetecteerd, verhoog de wachttijd
+    Wachttijd := Wachttijd + T#10MS;  // Verhoog de wachttijd met 10ms (afhankelijk van cyclustijd)
+
+    // Activeer het alarm als de wachttijd de maximale tijd overschrijdt
+    IF Wachttijd >= MaxWachttijd THEN
+        AlarmStatus := TRUE;
+    END_IF
+END_IF
+
+// stuur object-/alarmstatus naar PRG1
+PRG1_Conveyer_Operation.objectMissing := AlarmStatus;
+
+//stuur alarmstatus naar GVL.
+GVL.ALM001 			:= 	AlarmStatus; // schrijven in geheugen voor OPC/SCADA of weet ik het wat nog meer.
+GVL.alarmActief 	:= 	AlarmStatus; // sturen naar digitale uitgang
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG2_Object_Detectie">
+      <LineId Id="41" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="14" Count="2" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="17" Count="9" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="57" Count="1" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="55" Count="1" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="37" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
