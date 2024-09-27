@@ -7,7 +7,9 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[PRG2_Object_Detectie();
+      <ST><![CDATA[PRG1_Conveyer_Operation();
+
+PRG2_Object_Detectie();
 
 
 
@@ -23,6 +25,7 @@ END_VAR
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="110" Count="1" />
       <LineId Id="102" Count="0" />
       <LineId Id="105" Count="0" />
       <LineId Id="103" Count="1" />

@@ -35,26 +35,26 @@ VAR_GLOBAL
 // Digitale Uitgangen
 	transportActief 	AT%QX0.0 : BOOL := 0;  //transportbaan aangezet signaal
 	alarmActief 		AT%QX0.1 : BOOL := 0;  //alarm melding
-	//Uit2Res AT%QX0.2 : BOOL := 0;  //Reserve
-	//Uit3Res AT%QX0.3 : BOOL := 0;  //Reserve
-	//Uit4Res AT%QX0.4 : BOOL := 0;  //Reserve
-	//Uit5Res AT%QX0.5 : BOOL := 0;  //Reserve
-	//Uit6Res AT%QX0.6 : BOOL := 0;  //Reserve
-	//Uit7Res AT%QX0.7 : BOOL := 0;  //Reserve
-	//Uit8Res AT%QX1.0 : BOOL := 0;  //Reserve
-	//Uit9Res AT%QX1.1 : BOOL := 0;  //Reserve
-	
+	Uit2Res AT%QX0.2 : BOOL := 0;  //Reserve
+	Uit3Res AT%QX0.3 : BOOL := 0;  //Reserve
+	Uit4Res AT%QX0.4 : BOOL := 0;  //Reserve
+	Uit5Res AT%QX0.5 : BOOL := 0;  //Reserve
+	Uit6Res AT%QX0.6 : BOOL := 0;  //Reserve
+	Uit7Res AT%QX0.7 : BOOL := 0;  //Reserve
+	Uit8Res AT%QX1.0 : BOOL := 0;  //Reserve
+	Uit9Res AT%QX1.1 : BOOL := 0;  //Reserve
+
 // Analoge Uitgangen 
 	geschrevenSnelheid AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
-	//Uit11Res AT%QW12 : DINT := 0;  //Reserve
-	//Uit12Res AT%QW14 : DINT := 0;  //Reserve
-	//Uit13Res AT%QW16 : DINT := 0;  //Reserve
-	//Uit14Res AT%QW18 : DINT := 0;  //Reserve
-	//Uit15Res AT%QW20 : DINT := 0;  //Reserve
-	//Uit16Res AT%QW22 : DINT := 0;  //Reserve
-	//Uit17Res AT%QW24 : DINT := 0;  //Reserve
-	//Uit18Res AT%QW26 : DINT := 0;  //Reserve 
-	//Uit19Res AT%QW28 : DINT := 0;  //Reserve
+	Uit11Res AT%QW12 : DINT := 0;  //Reserve
+	Uit12Res AT%QW14 : DINT := 0;  //Reserve
+	Uit13Res AT%QW16 : DINT := 0;  //Reserve
+	Uit14Res AT%QW18 : DINT := 0;  //Reserve
+	Uit15Res AT%QW20 : DINT := 0;  //Reserve
+	Uit16Res AT%QW22 : DINT := 0;  //Reserve
+	Uit17Res AT%QW24 : DINT := 0;  //Reserve
+	Uit18Res AT%QW26 : DINT := 0;  //Reserve 
+	Uit19Res AT%QW28 : DINT := 0;  //Reserve
 
 
 // Globale Variabelen

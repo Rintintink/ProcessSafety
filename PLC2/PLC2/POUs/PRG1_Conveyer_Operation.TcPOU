@@ -3,7 +3,7 @@
   <POU Name="PRG1_Conveyer_Operation" Id="{fa1e73bd-a5a7-4194-991b-8213e2bc5537}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
 VAR_INPUT
-	objectMissing : BOOL;
+	//objectMissing : BOOL;
 	 
 END_VAR
 ]]></Declaration>
@@ -26,9 +26,9 @@ END_VAR
 //END_CASE
 //case functie, voor conveyerstatussen
 
-IF objectMissing THEN
-	GVL.PRG1_OperatieModus := 3; // zet status naar FAULT
-END_IF]]></ST>
+//IF objectMissing THEN
+//	GVL.PRG1_OperatieModus := 3; // zet status naar FAULT
+//END_IF]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
       <LineId Id="66" Count="19" />

@@ -32,9 +32,9 @@ END_IF
 //PRG1_Conveyer_Operation.objectMissing := AlarmStatus;
 
 //stuur statussen naar GVL.
-GVL.objectDetected  :=  ObjectAanwezig;
-GVL.ALM001 			:= 	AlarmStatus; // schrijven in geheugen voor OPC/SCADA of weet ik het wat nog meer.
-GVL.alarmActief 	:= 	AlarmStatus; // sturen naar digitale uitgang
+GVL.objectDetected  :=  ObjectAanwezig;	
+GVL.ALM001 			:= 	AlarmStatus; 	// schrijven in geheugen voor OPC/SCADA of weet ik het wat nog meer.
+GVL.alarmActief 	:= 	AlarmStatus;	// sturen naar digitale uitgang
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG2_Object_Detectie">
