@@ -30,7 +30,7 @@ LaadRatio := (Laadgewicht - MinLaad) / (MaxLaad - MinLaad);
 LaadRatioReal := DINT_TO_REAL(LaadRatio);
 
 // Bereken de transportbandsnelheid op basis van de laadratio
-BerekendeSnelheid := MaxSnelheid - (LaadRatio * (MaxSnelheid - MinSnelheid));
+BerekendeSnelheid := MaxSnelheid - (LaadRatioReal * (MaxSnelheid - MinSnelheid));
 
 // Rond de berekende snelheid af naar een DINT waarde en retourneer deze
 FC1_Bereken_Snelheid := DINT_TO_INT(REAL_TO_DINT(BerekendeSnelheid));
