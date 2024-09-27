@@ -3,7 +3,7 @@
   <POU Name="MAIN" Id="{08eb5067-a124-4fda-bdc0-191f359724d7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	Modus: STRING(INT#8) := 'OFF';
+	//Modus: STRING(INT#8) := 'OFF';
 END_VAR
 ]]></Declaration>
     <Implementation>
