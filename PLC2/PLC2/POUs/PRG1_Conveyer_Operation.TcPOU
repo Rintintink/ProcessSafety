@@ -4,7 +4,6 @@
     <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
 VAR_INPUT
 	//objectMissing : BOOL;
-	 
 END_VAR
 ]]></Declaration>
     <Implementation>
