@@ -1767,7 +1767,7 @@
                     </o>
                     <o>
                       <v n="Id">1647042231L</v>
-                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                      <v n="Value">"GVL.KN_002"</v>
                     </o>
                     <o>
                       <v n="Id">2812299069L</v>
@@ -1867,12 +1867,16 @@
                       <v n="Value">"Acknowledge"</v>
                     </o>
                     <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
                       <v n="Id">823443203L</v>
                       <v n="Value">"391"</v>
                     </o>
                     <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
+                      <v n="Id">2477733581L</v>
+                      <v n="Value">"GVL.KN_002"</v>
                     </o>
                   </l>
                 </o>
