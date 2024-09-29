@@ -17,12 +17,16 @@ CASE GVL.PRG1_Status OF
 	0:	//OFF, wacht op startknop
 			 
 	1:	//idle, wacht op object
-
+		IF GVL.objectDetected = TRUE THEN
+			GVL.ladingGewicht := GVL.weegcelWaarde;								
+			GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
+			GVL.PRG1_Status := 2;
+		END_IF
 	2:	//running
-		GVL.ladingGewicht := GVL.weegcelWaarde;									
-		GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
+		//GVL.ladingGewicht := GVL.weegcelWaarde;									
+		//GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
 		
-	3:
+	3: 
 			
 
 END_CASE
@@ -33,7 +37,11 @@ END_CASE
 //END_IF]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
-      <LineId Id="66" Count="13" />
+      <LineId Id="66" Count="10" />
+      <LineId Id="97" Count="1" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="77" Count="2" />
       <LineId Id="90" Count="2" />
       <LineId Id="80" Count="5" />
       <LineId Id="45" Count="0" />
