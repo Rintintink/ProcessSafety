@@ -20,7 +20,7 @@ END_VAR]]></Declaration>
 
 // Zorg ervoor dat Laadgewicht binnen de grenzen valt
 IF Laadgewicht < MinLaad THEN
-    Laadgewicht := MinLaad;
+    Laadgewicht := MinLaad + 2 ;
 ELSIF Laadgewicht > MaxLaad THEN
     Laadgewicht := MaxLaad;
 END_IF
