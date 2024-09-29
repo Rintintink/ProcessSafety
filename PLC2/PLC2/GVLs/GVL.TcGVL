@@ -66,10 +66,10 @@ VAR_GLOBAL
 // INT&DINT opslag
 	PRG1_Status			AT%MW10 : INT := 0; // 0 = idle, 1 = running, 2 = fault	
 	ladingGewicht 		AT%MW12 : DINT := 0; //opslag gelezen gewicht
-	minimumLading 		AT%MW14 : DINT := 0; // minimumlading op conveyer
-	maximumLading 		AT%MW16 : DINT := 0; // maximumlading op conveyer
-	minimumSnelheid		AT%MW18 : REAL := 0; // minimumsnelheid van conveyer
-	maximumSnelheid		AT%MW20 : REAL := 0; // maximumsnelheid van conveyer
+	minimumLading 		AT%MW14 : DINT := 20; // minimumlading op conveyer
+	maximumLading 		AT%MW16 : DINT := 500; // maximumlading op conveyer
+	minimumSnelheid		AT%MW18 : REAL := 1; // minimumsnelheid van conveyer
+	maximumSnelheid		AT%MW20 : REAL := 100; // maximumsnelheid van conveyer
 	
 	
 	 

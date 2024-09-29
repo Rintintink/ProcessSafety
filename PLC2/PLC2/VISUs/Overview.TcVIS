@@ -1183,7 +1183,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"MAIN.Modus"</v>
+                      <v n="Value">""</v>
                     </o>
                     <o>
                       <v n="Id">2880254039L</v>
@@ -2115,7 +2115,7 @@
                     </o>
                     <o>
                       <v n="Id">390574330L</v>
-                      <v n="Value">"Current State : %s"</v>
+                      <v n="Value">"Current State : %i"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -2123,11 +2123,11 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"MAIN.Modus"</v>
+                      <v n="Value">"GVL.PRG1_Status"</v>
                     </o>
                     <o>
                       <v n="Id">823443203L</v>
-                      <v n="Value">"497"</v>
+                      <v n="Value">"427"</v>
                     </o>
                   </l>
                 </o>
