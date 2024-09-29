@@ -64,7 +64,7 @@ VAR_GLOBAL
 	ALM001			AT%MX0.5 : BOOL := 0; //missend object - alarm
 	
 // INT&DINT opslag
-	PRG1_OperatieModus	AT%MW10 : INT := 0; // 0 = idle, 1 = running, 2 = fault	
+	PRG1_Status			AT%MW10 : INT := 0; // 0 = idle, 1 = running, 2 = fault	
 	ladingGewicht 		AT%MW12 : DINT := 0; //opslag gelezen gewicht
 	minimumLading 		AT%MW14 : DINT := 0; // minimumlading op conveyer
 	maximumLading 		AT%MW16 : DINT := 0; // maximumlading op conveyer

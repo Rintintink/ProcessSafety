@@ -19,9 +19,9 @@ IF ObjectAanwezig = TRUE THEN
     // Object gedetecteerd, reset de wachttijd en schakel het alarm uit
     Wachttijd := T#0S;
     AlarmStatus := FALSE;
-ELSE
+ELSE //wacht op detectie, tot maximale tijd verstreken en alarm geactiveerd
     // Geen object gedetecteerd, verhoog de wachttijd
-    Wachttijd := Wachttijd + T#10MS;  // Verhoog de wachttijd met 10ms (afhankelijk van cyclustijd)
+    Wachttijd := Wachttijd + T#10MS;  // Verhoog de wachttijd met 10ms 
 
     // Activeer het alarm als de wachttijd de maximale tijd overschrijdt
     IF Wachttijd >= MaxWachttijd THEN
