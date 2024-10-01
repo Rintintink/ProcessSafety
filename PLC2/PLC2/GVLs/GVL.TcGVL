@@ -13,8 +13,8 @@ VAR_GLOBAL
 	In2Res 			AT%IX0.2 : BOOL := 0;  //Reserve
 	In3Res 			AT%IX0.3 : BOOL := 0;  //Reserve 
 	In4Res 			AT%IX0.4 : BOOL := 0;  //Reserve 
-	LS_001 			AT%IX0.5 : BOOL := 0;  // objectdetectie sensor 
-	In6Res 			AT%IX0.6 : BOOL := 0;  //Reserve
+	LS_001 			AT%IX0.5 : BOOL := 0;  // objectdetectie sensor weegcel
+	LS_002 			AT%IX0.6 : BOOL := 0;  // objectdetectie sensor eind van transportbaan 
 	In7Res 			AT%IX0.7 : BOOL := 0;  //Reserve 
 	In8Res 			AT%IX1.0 : BOOL := 0;  //Reserve 
 	In9Res 			AT%IX1.1 : BOOL := 0;  //Reserve
@@ -63,17 +63,15 @@ VAR_GLOBAL
 	objectDetected		AT%MX0.1 : BOOL := 0;
 	ALM001				AT%MX0.5 : BOOL := 0; //missend object - alarm
 	
-// INT&DINT opslag
-	PRG1_Status			AT%MW10 : INT := 0; // 0 = idle, 1 = running, 2 = fault	
-	ladingGewicht 		AT%MW12 : DINT := 0; //opslag gelezen gewicht
-	minimumLading 		AT%MW14 : DINT := 20; // minimumlading op conveyer
-	maximumLading 		AT%MW16 : DINT := 500; // maximumlading op conveyer
-	minimumSnelheid		AT%MW18 : REAL := 1; // minimumsnelheid van conveyer
-	maximumSnelheid		AT%MW20 : REAL := 100; // maximumsnelheid van conveyer
+// INT&DINT&REAL opslag
+	PRG1_Status			AT%MW10 : INT := 0; 	// 0 = idle, 1 = running, 2 = fault	
+	ladingGewicht 		AT%MW12 : DINT := 0; 	// opslag gelezen gewicht
+	minimumLading 		AT%MW14 : DINT := 20; 	// minimumlading op conveyer
+	maximumLading 		AT%MW16 : DINT := 500; 	// maximumlading op conveyer
+	minimumSnelheid		AT%MW18 : REAL := 1; 	// minimumsnelheid van conveyer
+	maximumSnelheid		AT%MW20 : REAL := 100; 	// maximumsnelheid van conveyer
 	berekendeSnelheid	AT%MW22 : DINT;
 	cyclusTijd			AT%MW24 : TIME := T#10MS;
-	
-	
 	 
 	 
 END_VAR

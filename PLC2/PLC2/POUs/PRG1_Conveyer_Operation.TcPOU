@@ -48,6 +48,7 @@ CASE GVL.PRG1_Status OF
 	2: //running
 		GVL.transportActief := TRUE;
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
+		
 	3: // Fault
 		IF GVL.KN_002 THEN
 			GVL.alarmActief := 0;
@@ -56,10 +57,7 @@ CASE GVL.PRG1_Status OF
 			
 END_CASE
 
-
-//IF objectMissing THEN
-//	GVL.PRG1_OperatieModus := 3; // zet status naar FAULT
-//END_IF]]></ST>
+]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
       <LineId Id="172" Count="8" />
@@ -77,11 +75,12 @@ END_CASE
       <LineId Id="219" Count="0" />
       <LineId Id="199" Count="1" />
       <LineId Id="210" Count="0" />
+      <LineId Id="236" Count="0" />
       <LineId Id="201" Count="0" />
       <LineId Id="231" Count="1" />
       <LineId Id="234" Count="0" />
       <LineId Id="233" Count="0" />
-      <LineId Id="202" Count="5" />
+      <LineId Id="202" Count="2" />
       <LineId Id="45" Count="0" />
     </LineIds>
   </POU>
