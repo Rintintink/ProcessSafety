@@ -70,6 +70,7 @@ VAR_GLOBAL
 	maximumLading 		AT%MW16 : DINT := 500; // maximumlading op conveyer
 	minimumSnelheid		AT%MW18 : REAL := 1; // minimumsnelheid van conveyer
 	maximumSnelheid		AT%MW20 : REAL := 100; // maximumsnelheid van conveyer
+	berekendeSnelheid	AT%MW22 : DINT;
 	
 	
 	 

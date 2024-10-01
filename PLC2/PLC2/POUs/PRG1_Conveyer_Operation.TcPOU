@@ -27,16 +27,20 @@ CASE GVL.PRG1_Status OF
 			GVL.PRG1_Status := 1;
 		END_IF
 	1:	//idle, wacht op object
+		// als no object detected berekent FC1 de maximale tijd tot alarm
 		IF GVL.objectDetected = TRUE THEN
+			
 			stapTijd := stapTijd + T#10MS;
 			GVL.ladingGewicht := GVL.weegcelWaarde;								
-			GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
+			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
 			IF stapTijd = stapEind THEN
 				GVL.PRG1_Status := 2;
 			END_IF
 				
 		END_IF
-	//2:	//running
+	2: //running
+		GVL.transportActief := 1;
+		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
 		
 	//3: 
 			
@@ -48,7 +52,14 @@ END_CASE
 //END_IF]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
-      <LineId Id="172" Count="35" />
+      <LineId Id="172" Count="17" />
+      <LineId Id="209" Count="0" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="208" Count="0" />
+      <LineId Id="191" Count="9" />
+      <LineId Id="210" Count="0" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="201" Count="6" />
       <LineId Id="45" Count="0" />
     </LineIds>
   </POU>
