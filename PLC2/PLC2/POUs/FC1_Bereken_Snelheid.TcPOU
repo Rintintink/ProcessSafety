@@ -35,7 +35,7 @@ LaadRatioReal := DINT_TO_REAL(LaadRatio);
 BerekendeSnelheid := MaxSnelheid - (LaadRatioReal * (MaxSnelheid - MinSnelheid));
 
 // Rond de berekende snelheid af naar een DINT waarde en retourneer deze
-FC1_Bereken_Snelheid := REAL_TO_INT(BerekendeSnelheid);
+FC1_Bereken_Snelheid := REAL_TO_DINT(BerekendeSnelheid);
 ]]></ST>
     </Implementation>
     <LineIds Name="FC1_Bereken_Snelheid">

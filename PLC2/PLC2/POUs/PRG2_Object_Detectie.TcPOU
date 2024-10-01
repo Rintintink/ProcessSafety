@@ -5,7 +5,7 @@
 VAR
     ObjectAanwezig : BOOL;    			// Invoer van de sensor, TRUE als object gedetecteerd
     AlarmStatus    : BOOL;    			// Uitvoer, TRUE als er geen object is gedetecteerd
-    MaxWachttijd   : TIME := T#1M;    	// Maximale tijd om te wachten op een object
+    MaxWachttijd   : TIME := T#5M;    	// Maximale tijd om te wachten op een object
     Wachttijd      : TIME;    			// Huidig wachttijd zonder objectdetectie
 END_VAR]]></Declaration>
     <Implementation>
@@ -14,23 +14,30 @@ END_VAR]]></Declaration>
 // lezen ingangen
 ObjectAanwezig := GVL.LS_001; 
 
-// Controleer of een object aanwezig is op de transportband
-IF ObjectAanwezig = TRUE THEN
-    // Object gedetecteerd, reset de wachttijd en schakel het alarm uit
-    Wachttijd := T#0S;
-    AlarmStatus := FALSE;
-ELSE //wacht op detectie, tot maximale tijd verstreken en alarm geactiveerd
-    // Geen object gedetecteerd, verhoog de wachttijd
-    Wachttijd := Wachttijd + T#10MS;  // Verhoog de wachttijd met 10ms 
-
-    // Activeer het alarm als de wachttijd de maximale tijd overschrijdt
-    IF Wachttijd >= MaxWachttijd THEN
-        AlarmStatus := TRUE;
-    END_IF
+//reset wachttijd met alarm acknowledge
+IF GVL.KN_002 THEN
+	Wachttijd := T#0S;
+	AlarmStatus := FALSE;
 END_IF
 
-// stuur object-/alarmstatus naar PRG1
-//PRG1_Conveyer_Operation.objectMissing := AlarmStatus;
+IF GVL.PRG1_Status = 1 THEN
+	// Controleer of een object aanwezig is op de transportband
+	IF ObjectAanwezig = TRUE THEN
+		// Object gedetecteerd, reset de wachttijd en schakel het alarm uit
+		Wachttijd := T#0S;
+		AlarmStatus := FALSE;
+	ELSE//wacht op detectie, tot maximale tijd verstreken en alarm geactiveerd
+		// Geen object gedetecteerd, verhoog de wachttijd
+			
+		Wachttijd := Wachttijd + GVL.cyclusTijd;  // Verhoog de gewachtte tijd per cyclus 
+	
+		// Activeer het alarm als de wachttijd de maximale tijd overschrijdt
+		IF Wachttijd >= MaxWachttijd THEN
+			AlarmStatus := TRUE;
+		END_IF
+	END_IF
+END_IF
+
 
 //stuur statussen naar GVL.
 GVL.objectDetected  :=  ObjectAanwezig;	
@@ -42,12 +49,18 @@ GVL.alarmActief 	:= 	AlarmStatus;	// sturen naar digitale uitgang
       <LineId Id="70" Count="0" />
       <LineId Id="41" Count="1" />
       <LineId Id="12" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="103" Count="2" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="79" Count="0" />
       <LineId Id="61" Count="0" />
-      <LineId Id="14" Count="12" />
+      <LineId Id="82" Count="6" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="91" Count="5" />
+      <LineId Id="80" Count="1" />
       <LineId Id="54" Count="0" />
-      <LineId Id="59" Count="0" />
-      <LineId Id="57" Count="1" />
-      <LineId Id="63" Count="0" />
+      <LineId Id="100" Count="0" />
       <LineId Id="62" Count="0" />
       <LineId Id="60" Count="0" />
       <LineId Id="56" Count="0" />

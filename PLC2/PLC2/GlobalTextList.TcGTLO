@@ -16,6 +16,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"960"</v>
+              <v n="TextDefault">"Berekend: %i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"427"</v>
               <v n="TextDefault">"Current State : %i"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -31,8 +36,18 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"904"</v>
+              <v n="TextDefault">"Gestuurd: %i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"996"</v>
               <v n="TextDefault">"Startknop"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"150"</v>
+              <v n="TextDefault">"TransportActief"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

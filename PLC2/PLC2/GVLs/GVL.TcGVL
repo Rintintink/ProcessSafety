@@ -71,6 +71,7 @@ VAR_GLOBAL
 	minimumSnelheid		AT%MW18 : REAL := 1; // minimumsnelheid van conveyer
 	maximumSnelheid		AT%MW20 : REAL := 100; // maximumsnelheid van conveyer
 	berekendeSnelheid	AT%MW22 : DINT;
+	cyclusTijd			AT%MW24 : TIME := T#10MS;
 	
 	
 	 
