@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{78F9CBB8-219F-049A-52E9-73697638A956}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{3396072D-E8CD-F161-F80B-B7772009264F}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -67,7 +67,7 @@
 						</Var>
 						<Var>
 							<Name>GVL.weegcelWaarde</Name>
-							<Comment><![CDATA[ingelezen gewicht van de lading ]]></Comment>
+							<Comment><![CDATA[ ingelezen gewicht van de lading ]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>

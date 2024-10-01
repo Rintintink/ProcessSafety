@@ -4,6 +4,8 @@
     <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
 VAR_INPUT
 	//objectMissing : BOOL;
+	stapTijd : TIME := T#0S;
+	stapEind : TIME := T#20S;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,13 +28,17 @@ CASE GVL.PRG1_Status OF
 		END_IF
 	1:	//idle, wacht op object
 		IF GVL.objectDetected = TRUE THEN
+			stapTijd := stapTijd + T#10MS;
 			GVL.ladingGewicht := GVL.weegcelWaarde;								
 			GVL.geschrevenSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
-			GVL.PRG1_Status := 2;
+			IF stapTijd = stapEind THEN
+				GVL.PRG1_Status := 2;
+			END_IF
+				
 		END_IF
-	2:	//running
+	//2:	//running
 		
-	3: 
+	//3: 
 			
 END_CASE
 
@@ -42,21 +48,7 @@ END_CASE
 //END_IF]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
-      <LineId Id="66" Count="4" />
-      <LineId Id="99" Count="0" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="100" Count="2" />
-      <LineId Id="105" Count="0" />
-      <LineId Id="104" Count="0" />
-      <LineId Id="72" Count="2" />
-      <LineId Id="112" Count="1" />
-      <LineId Id="75" Count="1" />
-      <LineId Id="97" Count="1" />
-      <LineId Id="96" Count="0" />
-      <LineId Id="94" Count="0" />
-      <LineId Id="77" Count="0" />
-      <LineId Id="90" Count="2" />
-      <LineId Id="81" Count="4" />
+      <LineId Id="172" Count="35" />
       <LineId Id="45" Count="0" />
     </LineIds>
   </POU>
