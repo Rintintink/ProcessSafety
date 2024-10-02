@@ -56,9 +56,12 @@ CASE GVL.PRG1_Status OF
 		END_IF
 		
 	2: //running
-
+		
 		GVL.transportActief := TRUE;
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
+		
+		//reset berekening voor volgende weging
+		GVL.berekendeSnelheid := 0;
 		
 		// Runtijd tellen
 		runningTijd := runningTijd + GVL.cyclusTijd;
@@ -116,7 +119,11 @@ END_CASE
       <LineId Id="309" Count="0" />
       <LineId Id="306" Count="0" />
       <LineId Id="210" Count="0" />
-      <LineId Id="301" Count="1" />
+      <LineId Id="301" Count="0" />
+      <LineId Id="323" Count="0" />
+      <LineId Id="322" Count="0" />
+      <LineId Id="321" Count="0" />
+      <LineId Id="302" Count="0" />
       <LineId Id="264" Count="0" />
       <LineId Id="280" Count="0" />
       <LineId Id="314" Count="0" />

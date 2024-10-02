@@ -5,7 +5,7 @@
 VAR
     ObjectAanwezig : BOOL;    			// Invoer van de sensor, TRUE als object gedetecteerd
     AlarmStatus    : BOOL;    			// Uitvoer, TRUE als er geen object is gedetecteerd
-    MaxWachttijd   : TIME := T#1M;    	// Maximale tijd om te wachten op een object
+    MaxWachttijd   : TIME := T#30S;    	// Maximale tijd om te wachten op een object
     Wachttijd      : TIME;    			// Huidig wachttijd zonder objectdetectie
 END_VAR]]></Declaration>
     <Implementation>

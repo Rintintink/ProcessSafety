@@ -7,7 +7,17 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[(*
+	BOUW  Alarm als berekende snelheid == 0;
+
+
+
+
+
+
+
+
+*)
 
 CASE GVL.PRG1_Status OF 
 	0: 
@@ -28,6 +38,8 @@ PRG2_Object_Detectie();
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="124" Count="0" />
+      <LineId Id="140" Count="8" />
+      <LineId Id="139" Count="0" />
       <LineId Id="126" Count="0" />
       <LineId Id="125" Count="0" />
       <LineId Id="128" Count="0" />
