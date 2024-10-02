@@ -6,19 +6,26 @@ VAR_INPUT
 	//objectMissing : BOOL;
 	weegTijd : TIME := T#0S;
 	weegEind : TIME := T#20S;
+	runningTijd : TIME := T#0S;
+	detectieLaagTijd  : TIME := T#4S;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//GVL.PRG1_OperatieModus statussen
-// 0 = OFF
-// 1 = IDLE
-// 2 = RUNNING
-// 3 = FAULT
+      <ST><![CDATA[(* 
+
+	// GVL.PRG1_OperatieModus statussen
+	// 0 = OFF
+	// 1 = IDLE
+	// 2 = RUNNING
+	// 3 = FAULT
+
+
+*)
 
 // Read startknop
 IF NOT GVL.KN_001 AND NOT GVL.alarmActief THEN
 	GVL.PRG1_Status := 0;
-	GVL.transportActief : FALSE;
+	GVL.transportActief := FALSE;
 END_IF
 
 //als alarm dan naar FAULT
@@ -48,10 +55,15 @@ CASE GVL.PRG1_Status OF
 	2: //running
 		GVL.transportActief := TRUE;
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
+		runningTijd := runningTijd + GVL.cyclusTijd;
+		IF runningTijd >= detectieLaagTijd THEN
+			GVL.objectDetected := 0;
+		END_IF
 		
 	3: // Fault
 		IF GVL.KN_002 THEN
-			GVL.alarmActief := 0;
+			//GVL.KN_001 := FALSE;
+			GVL.alarmActief := FALSE;
 			GVL.PRG1_Status := 1;
 		END_IF
 			
@@ -60,7 +72,13 @@ END_CASE
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
-      <LineId Id="172" Count="8" />
+      <LineId Id="243" Count="0" />
+      <LineId Id="255" Count="0" />
+      <LineId Id="258" Count="4" />
+      <LineId Id="257" Count="0" />
+      <LineId Id="254" Count="0" />
+      <LineId Id="253" Count="0" />
+      <LineId Id="177" Count="3" />
       <LineId Id="235" Count="0" />
       <LineId Id="181" Count="0" />
       <LineId Id="230" Count="0" />
@@ -75,9 +93,13 @@ END_CASE
       <LineId Id="219" Count="0" />
       <LineId Id="199" Count="1" />
       <LineId Id="210" Count="0" />
+      <LineId Id="264" Count="0" />
+      <LineId Id="267" Count="2" />
       <LineId Id="236" Count="0" />
       <LineId Id="201" Count="0" />
-      <LineId Id="231" Count="1" />
+      <LineId Id="231" Count="0" />
+      <LineId Id="263" Count="0" />
+      <LineId Id="232" Count="0" />
       <LineId Id="234" Count="0" />
       <LineId Id="233" Count="0" />
       <LineId Id="202" Count="2" />

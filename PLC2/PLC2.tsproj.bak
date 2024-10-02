@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{89EC2F95-D712-6430-6AA1-55AD678B8B9D}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{344ACD49-E687-8B39-5C03-FE0C69F4FBFE}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -42,12 +42,12 @@
 						</Var>
 						<Var>
 							<Name>GVL.LS_001</Name>
-							<Comment><![CDATA[ objectdetectie sensor ]]></Comment>
+							<Comment><![CDATA[ objectdetectie sensor weegcel]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.In6Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Name>GVL.LS_002</Name>
+							<Comment><![CDATA[ objectdetectie sensor eind van transportbaan ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
