@@ -18,7 +18,9 @@ ObjectAanwezig := GVL.LS_001;
 IF GVL.KN_002 THEN
 	Wachttijd := T#0S;
 	AlarmStatus := FALSE;
+	GVL.PRG1_Status := 1;
 END_IF
+
 
 IF GVL.PRG1_Status = 1 THEN
 	// Controleer of een object aanwezig is op de transportband
@@ -52,7 +54,9 @@ GVL.alarmActief 	:= 	AlarmStatus;	// sturen naar digitale uitgang
       <LineId Id="106" Count="0" />
       <LineId Id="103" Count="2" />
       <LineId Id="107" Count="0" />
+      <LineId Id="115" Count="0" />
       <LineId Id="102" Count="0" />
+      <LineId Id="114" Count="0" />
       <LineId Id="79" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="82" Count="6" />

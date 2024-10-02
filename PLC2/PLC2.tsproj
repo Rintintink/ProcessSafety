@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{E2D9C221-C826-83EA-84CA-7A5FBD540576}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{EC952FD8-3FD5-4FAD-15C0-6331D774AACD}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -27,22 +27,17 @@
 						</Var>
 						<Var>
 							<Name>GVL.In2Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In3Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In4Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
-							<Type>BIT</Type>
-						</Var>
-						<Var>
-							<Name>GVL.LS_001</Name>
-							<Comment><![CDATA[ objectdetectie sensor weegcel]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
@@ -52,17 +47,17 @@
 						</Var>
 						<Var>
 							<Name>GVL.In7Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In8Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In9Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
@@ -72,47 +67,47 @@
 						</Var>
 						<Var>
 							<Name>GVL.In11Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In12Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In13Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In14Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In15Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In16Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In17Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In18Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In19Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 					</Vars>
@@ -120,52 +115,52 @@
 						<Name>PlcTask Outputs</Name>
 						<Var>
 							<Name>GVL.transportActief</Name>
-							<Comment><![CDATA[transportbaan aangezet signaal]]></Comment>
+							<Comment><![CDATA[ transportbaan aangezet signaal]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.alarmActief</Name>
-							<Comment><![CDATA[alarm melding]]></Comment>
+							<Comment><![CDATA[ alarm melding]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit2Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit3Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit4Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit5Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit6Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit7Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit8Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit9Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>
@@ -175,47 +170,47 @@
 						</Var>
 						<Var>
 							<Name>GVL.Uit11Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit12Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit13Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit14Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit15Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit16Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit17Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit18Res</Name>
-							<Comment><![CDATA[Reserve ]]></Comment>
+							<Comment><![CDATA[ Reserve ]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit19Res</Name>
-							<Comment><![CDATA[Reserve]]></Comment>
+							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 					</Vars>

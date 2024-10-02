@@ -9,7 +9,10 @@ VAR_INPUT
 	runningTijd : TIME := T#0S;
 	detectieLaagTijd  : TIME := T#4S;
 END_VAR
-]]></Declaration>
+
+VAR
+	runningTijdDint: DINT;
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* 
 	// GVL.PRG1_OperatieModus statussen
@@ -46,17 +49,38 @@ CASE GVL.PRG1_Status OF
 			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);
 			IF weegTijd = weegEind THEN
 				GVL.PRG1_Status := 2;
+				//reset weegtijd
+				weegTijd := T#0S;
 			END_IF
 			
 		END_IF
 		
 	2: //running
+
 		GVL.transportActief := TRUE;
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
+		
+		// Runtijd tellen
 		runningTijd := runningTijd + GVL.cyclusTijd;
-		IF runningTijd >= detectieLaagTijd THEN
-			GVL.objectDetected := 0;
+		runningTijdDint := TIME_TO_DINT(runningTijd);
+		
+		// 
+		IF runningTijd > T#2S THEN
+			GVL.LS_001 := FALSE;
 		END_IF
+		
+		// Tijd conversie naar transportbaan voortgang.
+		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijdDint/1000);
+		
+		// Vergelijk voortgang met einde transportbaan, vervolgens reset waarden en status naar IDLE
+		IF GVL.transportBaanVoortgang >= GVL.transportBaanEinde THEN
+			GVL.transportActief := FALSE;
+			GVL.transportBaanVoortgang := 0;
+			GVL.geschrevenSnelheid := 0; 
+			runningTijd := T#0S;
+			GVL.PRG1_Status := 1;
+		END_IF
+		
 		
 	3: // Fault
 		IF GVL.KN_002 THEN
@@ -84,12 +108,32 @@ END_CASE
       <LineId Id="209" Count="0" />
       <LineId Id="190" Count="0" />
       <LineId Id="208" Count="0" />
-      <LineId Id="191" Count="7" />
+      <LineId Id="191" Count="4" />
+      <LineId Id="310" Count="1" />
+      <LineId Id="196" Count="2" />
       <LineId Id="219" Count="0" />
-      <LineId Id="199" Count="1" />
+      <LineId Id="199" Count="0" />
+      <LineId Id="309" Count="0" />
+      <LineId Id="306" Count="0" />
       <LineId Id="210" Count="0" />
+      <LineId Id="301" Count="1" />
       <LineId Id="264" Count="0" />
-      <LineId Id="267" Count="2" />
+      <LineId Id="280" Count="0" />
+      <LineId Id="314" Count="0" />
+      <LineId Id="319" Count="0" />
+      <LineId Id="318" Count="0" />
+      <LineId Id="315" Count="1" />
+      <LineId Id="303" Count="1" />
+      <LineId Id="285" Count="0" />
+      <LineId Id="267" Count="0" />
+      <LineId Id="313" Count="0" />
+      <LineId Id="268" Count="0" />
+      <LineId Id="286" Count="0" />
+      <LineId Id="320" Count="0" />
+      <LineId Id="288" Count="1" />
+      <LineId Id="305" Count="0" />
+      <LineId Id="287" Count="0" />
+      <LineId Id="269" Count="0" />
       <LineId Id="236" Count="0" />
       <LineId Id="201" Count="0" />
       <LineId Id="231" Count="0" />

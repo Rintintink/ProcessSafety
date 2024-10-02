@@ -10,73 +10,70 @@ VAR_GLOBAL
 // Digitale Ingangen
 	KN_001 			AT%IX0.0 : BOOL := 0;  // systeem opstartknop
 	KN_002 			AT%IX0.1 : BOOL := 0;  // Acknowledge All Alarms 
-	In2Res 			AT%IX0.2 : BOOL := 0;  //Reserve
-	In3Res 			AT%IX0.3 : BOOL := 0;  //Reserve 
-	In4Res 			AT%IX0.4 : BOOL := 0;  //Reserve 
-	LS_001 			AT%IX0.5 : BOOL := 0;  // objectdetectie sensor weegcel
+	In2Res 			AT%IX0.2 : BOOL := 0;  // Reserve
+	In3Res 			AT%IX0.3 : BOOL := 0;  // Reserve 
+	In4Res 			AT%IX0.4 : BOOL := 0;  // Reserve 
+	LS_001 			AT%MX0.5 : BOOL := 0;  // objectdetectie sensor weegcel
 	LS_002 			AT%IX0.6 : BOOL := 0;  // objectdetectie sensor eind van transportbaan 
-	In7Res 			AT%IX0.7 : BOOL := 0;  //Reserve 
-	In8Res 			AT%IX1.0 : BOOL := 0;  //Reserve 
-	In9Res 			AT%IX1.1 : BOOL := 0;  //Reserve
+	In7Res 			AT%IX0.7 : BOOL := 0;  // Reserve 
+	In8Res 			AT%IX1.0 : BOOL := 0;  // Reserve 
+	In9Res 			AT%IX1.1 : BOOL := 0;  // Reserve
 	
 // Analoge ingangen 
 	weegcelWaarde 	AT%IW10 : DINT := 1;  // ingelezen gewicht van de lading 
-	In11Res 		AT%IW12 : DINT := 0;  //Reserve
-	In12Res 		AT%IW14 : DINT := 0;  //Reserve
-	In13Res 		AT%IW16 : DINT := 0;  //Reserve 
-	In14Res 		AT%IW18 : DINT := 0;  //Reserve 
-	In15Res 		AT%IW20 : DINT := 0;  //Reserve 
-	In16Res 		AT%IW22 : DINT := 0;  //Reserve
-	In17Res 		AT%IW24 : DINT := 0;  //Reserve
-	In18Res 		AT%IW26 : DINT := 0;  //Reserve
-	In19Res 		AT%IW28 : DINT := 0;  //Reserve
+	In11Res 		AT%IW12 : DINT := 0;  // Reserve
+	In12Res 		AT%IW14 : DINT := 0;  // Reserve
+	In13Res 		AT%IW16 : DINT := 0;  // Reserve 
+	In14Res 		AT%IW18 : DINT := 0;  // Reserve 
+	In15Res 		AT%IW20 : DINT := 0;  // Reserve 
+	In16Res 		AT%IW22 : DINT := 0;  // Reserve
+	In17Res 		AT%IW24 : DINT := 0;  // Reserve
+	In18Res 		AT%IW26 : DINT := 0;  // Reserve
+	In19Res 		AT%IW28 : DINT := 0;  // Reserve
 	
 // -----------------------------------------Uitgangen
 // Digitale Uitgangen
-	transportActief 	AT%QX0.0 : BOOL := 0;  //transportbaan aangezet signaal
-	alarmActief 		AT%QX0.1 : BOOL := 0;  //alarm melding
-	Uit2Res 			AT%QX0.2 : BOOL := 0;  //Reserve
-	Uit3Res 			AT%QX0.3 : BOOL := 0;  //Reserve
-	Uit4Res 			AT%QX0.4 : BOOL := 0;  //Reserve
-	Uit5Res 			AT%QX0.5 : BOOL := 0;  //Reserve
-	Uit6Res 			AT%QX0.6 : BOOL := 0;  //Reserve
-	Uit7Res 			AT%QX0.7 : BOOL := 0;  //Reserve
-	Uit8Res 			AT%QX1.0 : BOOL := 0;  //Reserve
-	Uit9Res 			AT%QX1.1 : BOOL := 0;  //Reserve
+	transportActief 	AT%QX0.0 : BOOL := 0;  // transportbaan aangezet signaal
+	alarmActief 		AT%QX0.1 : BOOL := 0;  // alarm melding
+	Uit2Res 			AT%QX0.2 : BOOL := 0;  // Reserve
+	Uit3Res 			AT%QX0.3 : BOOL := 0;  // Reserve
+	Uit4Res 			AT%QX0.4 : BOOL := 0;  // Reserve
+	Uit5Res 			AT%QX0.5 : BOOL := 0;  // Reserve
+	Uit6Res 			AT%QX0.6 : BOOL := 0;  // Reserve
+	Uit7Res 			AT%QX0.7 : BOOL := 0;  // Reserve
+	Uit8Res 			AT%QX1.0 : BOOL := 0;  // Reserve
+	Uit9Res 			AT%QX1.1 : BOOL := 0;  // Reserve
 
 // Analoge Uitgangen 
-	geschrevenSnelheid 	AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
-	Uit11Res 			AT%QW12 : DINT := 0;  //Reserve
-	Uit12Res			AT%QW14 : DINT := 0;  //Reserve
-	Uit13Res 			AT%QW16 : DINT := 0;  //Reserve
-	Uit14Res 			AT%QW18 : DINT := 0;  //Reserve
-	Uit15Res 			AT%QW20 : DINT := 0;  //Reserve
-	Uit16Res 			AT%QW22 : DINT := 0;  //Reserve
-	Uit17Res 			AT%QW24 : DINT := 0;  //Reserve
-	Uit18Res 			AT%QW26 : DINT := 0;  //Reserve 
-	Uit19Res 			AT%QW28 : DINT := 0;  //Reserve
+	geschrevenSnelheid 		AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
+	Uit11Res 				AT%QW12 : DINT := 0;  // Reserve
+	Uit12Res				AT%QW14 : DINT := 0;  // Reserve
+	Uit13Res 				AT%QW16 : DINT := 0;  // Reserve
+	Uit14Res 				AT%QW18 : DINT := 0;  // Reserve
+	Uit15Res 				AT%QW20 : DINT := 0;  // Reserve
+	Uit16Res 				AT%QW22 : DINT := 0;  // Reserve
+	Uit17Res 				AT%QW24 : DINT := 0;  // Reserve
+	Uit18Res 				AT%QW26 : DINT := 0;  // Reserve 
+	Uit19Res 				AT%QW28 : DINT := 0;  // Reserve
 
 
 // Globale Variabelen
 // Bool Statussen
-	systeemStatus 		AT%MX0.0 : BOOL := 0; // 0 = uit, 1 = actief
-	objectDetected		AT%MX0.1 : BOOL := 0;
-	ALM001				AT%MX0.5 : BOOL := 0; //missend object - alarm
+	systeemStatus 			AT%MX0.0 : BOOL := 0; // 0 = uit, 1 = actief
+	objectDetected			AT%MX0.1 : BOOL := 0;
+	ALM001					AT%MX0.2 : BOOL := 0; // missend object - alarm
 	
 // INT&DINT&REAL opslag
-	PRG1_Status			AT%MW10 : INT := 0; 	// 0 = idle, 1 = running, 2 = fault	
-	ladingGewicht 		AT%MW12 : DINT := 0; 	// opslag gelezen gewicht
-	minimumLading 		AT%MW14 : DINT := 20; 	// minimumlading op conveyer
-	maximumLading 		AT%MW16 : DINT := 500; 	// maximumlading op conveyer
-	minimumSnelheid		AT%MW18 : REAL := 1; 	// minimumsnelheid van conveyer
-	maximumSnelheid		AT%MW20 : REAL := 100; 	// maximumsnelheid van conveyer
-	berekendeSnelheid	AT%MW22 : DINT;
-	cyclusTijd			AT%MW24 : TIME := T#10MS;
-	 
-	 
-	Debug_Laadgewicht: DINT;
-	Debug_LaadRatio: DINT;
-	Debug_BerekendeSnelheid: REAL;
+	PRG1_Status				AT%MW10 : INT := 0; 	// 0 = idle, 1 = running, 2 = fault	
+	ladingGewicht 			AT%MW12 : DINT := 0; 	// opslag gelezen gewicht
+	minimumLading 			AT%MW14 : DINT := 20; 	// minimumlading op conveyer
+	maximumLading 			AT%MW16 : DINT := 500; 	// maximumlading op conveyer
+	minimumSnelheid			AT%MW18 : REAL := 1; 	// minimumsnelheid van conveyer
+	maximumSnelheid			AT%MW20 : REAL := 100; 	// maximumsnelheid van conveyer
+	berekendeSnelheid		AT%MW22 : DINT;
+	cyclusTijd				AT%MW24 : TIME := T#10MS;
+	transportBaanVoortgang 	AT%MW26 : DINT;
+	transportBaanEinde		AT%MW28 : DINT := 60;
 END_VAR
 
 
