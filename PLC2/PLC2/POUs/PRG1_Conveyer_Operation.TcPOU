@@ -12,13 +12,11 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* 
-
 	// GVL.PRG1_OperatieModus statussen
 	// 0 = OFF
 	// 1 = IDLE
 	// 2 = RUNNING
 	// 3 = FAULT
-
 
 *)
 
@@ -68,16 +66,13 @@ CASE GVL.PRG1_Status OF
 		END_IF
 			
 END_CASE
-
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
       <LineId Id="243" Count="0" />
-      <LineId Id="255" Count="0" />
       <LineId Id="258" Count="4" />
+      <LineId Id="278" Count="0" />
       <LineId Id="257" Count="0" />
-      <LineId Id="254" Count="0" />
-      <LineId Id="253" Count="0" />
       <LineId Id="177" Count="3" />
       <LineId Id="235" Count="0" />
       <LineId Id="181" Count="0" />
@@ -102,7 +97,7 @@ END_CASE
       <LineId Id="232" Count="0" />
       <LineId Id="234" Count="0" />
       <LineId Id="233" Count="0" />
-      <LineId Id="202" Count="2" />
+      <LineId Id="202" Count="1" />
       <LineId Id="45" Count="0" />
     </LineIds>
   </POU>
