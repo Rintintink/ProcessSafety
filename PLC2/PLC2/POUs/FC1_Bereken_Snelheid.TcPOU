@@ -2,48 +2,32 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="FC1_Bereken_Snelheid" Id="{12de46b1-cd22-4bee-b0d4-4edb4530f63f}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION FC1_Bereken_Snelheid : DINT
+
 VAR_INPUT
     Laadgewicht : DINT;    // Invoer van de weegcel
-    MinLaad     : DINT;    // Minimum laadgewicht (lege transportband)
-    MaxLaad     : DINT;    // Maximum laadgewicht (volgeladen transportband)
-    MinSnelheid : REAL;    // Minimum transportbandsnelheid (langzaamst)
-    MaxSnelheid : REAL;    // Maximum transportbandsnelheid (snelst)
 END_VAR
-
 VAR
-    LaadRatio   : DINT;    	// Proportionele waarde van het laadgewicht
-	LaadRatioReal : REAL;	// vertaald naar REAL
     BerekendeSnelheid : REAL; // De berekende snelheid in REAL
-
+	LaadgewichtReal: REAL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Zorg ervoor dat Laadgewicht binnen de grenzen valt
-Laadgewicht := MAX(MinLaad, MIN(Laadgewicht, MaxLaad));
+      <ST><![CDATA[
+LaadgewichtReal := DINT_TO_REAL(Laadgewicht);
+// Bereken de transportbandsnelheid op basis van de laadratio
 
-// Controleer of MaxLaad en MinLaad niet gelijk zijn om deling door nul te vermijden
-IF MaxLaad > MinLaad THEN
-    // Bereken de laadratio als percentage van het maximale laadgewicht
-    LaadRatio := (Laadgewicht - MinLaad) / (MaxLaad - MinLaad);
+BerekendeSnelheid := LaadgewichtReal / 5 * 6.5; 
 
-    // Bereken de transportbandsnelheid op basis van de laadratio
-    BerekendeSnelheid := MaxSnelheid - (LaadRatio * (MaxSnelheid - MinSnelheid));
+// Rond de berekende snelheid af naar een DINT waarde en retourneer deze
+FC1_Bereken_Snelheid := REAL_TO_DINT(BerekendeSnelheid);
 
-    // Rond de berekende snelheid af naar een DINT waarde en retourneer deze
-    FC1_Bereken_Snelheid := REAL_TO_DINT(BerekendeSnelheid);
-ELSE
-    // Zet de snelheid op een standaardwaarde als MaxLaad <= MinLaad
-    FC1_Bereken_Snelheid := REAL_TO_DINT(MinSnelheid);
-END_IF;
-
-// Debug statements om waarden te controleren
-GVL.Debug_Laadgewicht := Laadgewicht;
-GVL.Debug_LaadRatio := LaadRatio;
-GVL.Debug_BerekendeSnelheid := BerekendeSnelheid;
 ]]></ST>
     </Implementation>
     <LineIds Name="FC1_Bereken_Snelheid">
-      <LineId Id="559" Count="15" />
-      <LineId Id="552" Count="5" />
+      <LineId Id="560" Count="0" />
+      <LineId Id="580" Count="0" />
+      <LineId Id="567" Count="0" />
+      <LineId Id="579" Count="0" />
+      <LineId Id="568" Count="4" />
       <LineId Id="36" Count="0" />
     </LineIds>
   </POU>

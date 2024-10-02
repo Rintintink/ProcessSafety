@@ -27,7 +27,7 @@ IF NOT GVL.KN_001 AND NOT GVL.alarmActief THEN
 END_IF
 
 //als alarm dan naar FAULT
-IF GVL.alarmActief THEN
+IF NOT GVL.KN_001 AND GVL.alarmActief THEN
 	GVL.PRG1_Status := 3;
 END_IF
 
@@ -43,7 +43,7 @@ CASE GVL.PRG1_Status OF
 			
 			weegTijd := weegTijd + GVL.cyclusTijd;
 			GVL.ladingGewicht := GVL.weegcelWaarde;								
-			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht,GVL.minimumLading,GVL.maximumLading,GVL.minimumSnelheid,GVL.maximumSnelheid);
+			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);
 			IF weegTijd = weegEind THEN
 				GVL.PRG1_Status := 2;
 			END_IF
