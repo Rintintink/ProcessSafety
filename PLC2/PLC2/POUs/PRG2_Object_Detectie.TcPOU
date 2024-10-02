@@ -36,6 +36,7 @@ IF GVL.PRG1_Status = 1 THEN
 		// Activeer het alarm als de wachttijd de maximale tijd overschrijdt
 		IF Wachttijd >= MaxWachttijd THEN
 			AlarmStatus := TRUE;
+			GVL.PRG1_Status := 3;
 		END_IF
 	END_IF
 END_IF
@@ -61,7 +62,9 @@ GVL.alarmActief 	:= 	AlarmStatus;	// sturen naar digitale uitgang
       <LineId Id="61" Count="0" />
       <LineId Id="82" Count="6" />
       <LineId Id="97" Count="0" />
-      <LineId Id="91" Count="5" />
+      <LineId Id="91" Count="4" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="96" Count="0" />
       <LineId Id="80" Count="1" />
       <LineId Id="54" Count="0" />
       <LineId Id="100" Count="0" />
