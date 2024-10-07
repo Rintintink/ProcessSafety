@@ -5,9 +5,9 @@
 @startuml
 [*] --> Idle : System Started
 
-Idle --> DetectObject : Timer Event
-DetectObject --> Alarm : Object Missing
-DetectObject --> Idle : Object Detected
-Alarm --> Idle : Object Restored
+State Idle {
+    Idle : Idle af
+    Timer -> Hello
+}
 
 @enduml
