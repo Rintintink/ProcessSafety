@@ -15,7 +15,7 @@ PRG2 -> GVL: Read LS_001 (object detection)
 alt Object detected
     PRG2 -> GVL: Reset Wachttijd
     PRG2 -> PRG1: Continue conveyor operation
-else No object
+else No object detected
     PRG2 -> GVL: Increase Wachttijd
     alt Wachttijd >= MaxWachttijd
         PRG2 -> GVL: Set AlarmStatus to TRUE
