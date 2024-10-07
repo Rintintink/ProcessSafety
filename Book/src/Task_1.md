@@ -5,10 +5,10 @@
 
 [*] --> OFF : PLC Power-up
 OFF --> IDLE : Start Button Pressed
-IDLE --> RUNNING : Object Detected and Weighed
-RUNNING --> IDLE : Object Transport Complete
-RUNNING --> FAULT : Alarm Triggered
-FAULT -[norank]-> IDLE : Alarm Acknowledged
+IDLE --> RUNNING : Object Detected\nand Weighed.\nCalculate speed
+RUNNING --> IDLE : Object Transport\nComplete
+IDLE -> FAULT : Alarm\nTriggered
+FAULT -> IDLE : Alarm\nAcknowledged
 
 state OFF {
     
@@ -19,13 +19,14 @@ state IDLE {
     
     IDLE : System is idle
     IDLE : Waiting for object detection
+    
 }
 
 state RUNNING {
     
     RUNNING : Conveyer is running
-    RUNNING : Measure runtime from speed
-    RUNNING : Calculate progress from speed
+    RUNNING : Measures total runtime from speed
+    RUNNING : Calculates progress from speed
 }
 
 state FAULT {
