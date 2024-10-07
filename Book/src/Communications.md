@@ -2,7 +2,8 @@
 
 ```plantuml
 @startuml
-actor "Operator" as Operator
+!theme spacelab
+actor "Operator" as Operator 
 participant "PRG1_Conveyer_Operation" as PRG1
 participant "PRG2_Object_Detectie" as PRG2
 participant "Global Variables" as GVL
@@ -15,6 +16,7 @@ PRG2 -> GVL: Wait for LS_001 (object detection)
 alt Object detected
     PRG2 -> GVL: Reset Wachttijd
     PRG2 -> PRG1: Continue conveyor operation
+    
 else No object detected
     PRG2 -> GVL: Countup Wachttijd
     alt Wachttijd >= MaxWachttijd

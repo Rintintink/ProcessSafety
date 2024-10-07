@@ -2,6 +2,10 @@
 
 ```plantuml
 @startuml
+!theme spacelab-white
+skinparam backgroundcolor transparent
+
+
 participant Task1 as "Conveyor Operation"
 participant Function as "Calculate Conveyor Speed FC"
 participant GVL

@@ -3,6 +3,9 @@
 ```plantuml
 @startuml PRG1_Conveyer_Operation
 
+!theme spacelab-white
+skinparam backgroundcolor transparent
+
 [*] --> OFF : PLC Power-up
 OFF --> IDLE : Start Button Pressed
 IDLE --> RUNNING : Object Detected\nand Weighed.\nCalculate speed

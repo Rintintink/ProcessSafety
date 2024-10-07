@@ -3,6 +3,8 @@
 ```plantuml
 
 @startuml
+!theme spacelab-white
+skinparam backgroundcolor transparent
 
 [*] --> Inputs : System Started
 Inputs --> PRG1_IDLE : PRG1 in status 1
@@ -35,6 +37,8 @@ State ALARM {
 
 }
 State Outputs {
+    Outputs : Set GVL Alarmstatus
+    Outputs : Set GVL Objectstatus
         
 }
 @enduml
