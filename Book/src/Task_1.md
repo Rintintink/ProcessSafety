@@ -1,35 +1,41 @@
 # Task 1 - conveyer operation
 
 ```plantuml
-@startuml
-[*] --> OFF : Power on
+@startuml PRG1_Conveyer_Operation
+
+[*] --> OFF : PLC Power-up
+OFF --> IDLE : Start Button Pressed
+IDLE --> RUNNING : Object Detected and Weighed
+RUNNING --> IDLE : Object Transport Complete
+RUNNING --> FAULT : Alarm Triggered
+FAULT -[norank]-> IDLE : Alarm Acknowledged
 
 state OFF {
-    [*] --> WaitingForStart
-    WaitingForStart --> IDLE : KN_001 pressed
+    
+    OFF : System is off
 }
 
 state IDLE {
-    [*] --> WaitingForObject
-    WaitingForObject --> RUNNING : Object detected
-    WaitingForObject --> FAULT : Alarm triggered
+    
+    IDLE : System is idle
+    IDLE : Waiting for object detection
 }
 
 state RUNNING {
-    [*] --> ConveyorRunning
-    ConveyorRunning --> IDLE : Conveyor finished transporting
-    ConveyorRunning --> FAULT : Alarm triggered
+    
+    RUNNING : Conveyer is running
+    RUNNING : Measure runtime from speed
+    RUNNING : Calculate progress from speed
 }
 
 state FAULT {
-    [*] --> AlarmState
-    AlarmState --> IDLE : Acknowledge alarm (KN_002)
+    FAULT : System in fault mode
+    FAULT : Alarm triggered
 }
 
-OFF --> IDLE : KN_001 pressed
-IDLE --> RUNNING : Object detected
-RUNNING --> IDLE : Transport completed
-RUNNING --> FAULT : Alarm triggered
-FAULT --> IDLE : Acknowledge alarm (KN_002)
-
 @enduml
+
+
+
+
+
