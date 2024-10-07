@@ -3,7 +3,7 @@
 ```plantuml
 @startuml
 participant Task1 as "Conveyor Operation"
-participant Function as "CalculateConveyorSpeed"
+participant Function as "Calculate Conveyor Speed"
 participant GVL
 
 Task1 -> GVL : Read Load on Conveyor
