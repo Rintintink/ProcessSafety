@@ -13,10 +13,6 @@ END_VAR
 
 
 
-
-
-
-
 *)
 
 CASE GVL.PRG1_Status OF 
@@ -30,6 +26,7 @@ CASE GVL.PRG1_Status OF
 		MAIN.Modus := 'FAULT';
 	
 END_CASE
+
 PRG1_Conveyer_Operation();
 
 PRG2_Object_Detectie();
@@ -38,7 +35,8 @@ PRG2_Object_Detectie();
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="124" Count="0" />
-      <LineId Id="140" Count="8" />
+      <LineId Id="140" Count="1" />
+      <LineId Id="146" Count="2" />
       <LineId Id="139" Count="0" />
       <LineId Id="126" Count="0" />
       <LineId Id="125" Count="0" />
@@ -48,6 +46,7 @@ PRG2_Object_Detectie();
       <LineId Id="133" Count="4" />
       <LineId Id="130" Count="0" />
       <LineId Id="129" Count="0" />
+      <LineId Id="153" Count="0" />
       <LineId Id="110" Count="1" />
       <LineId Id="102" Count="0" />
       <LineId Id="19" Count="0" />

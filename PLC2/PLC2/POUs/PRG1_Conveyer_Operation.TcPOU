@@ -5,7 +5,7 @@
 VAR_INPUT
 	//objectMissing : BOOL;
 	weegTijd : TIME := T#0S;
-	weegEind : TIME := T#20S;
+	weegEind : TIME := T#5S;
 	runningTijd : TIME := T#0S;
 	detectieLaagTijd  : TIME := T#4S;
 END_VAR
@@ -40,7 +40,11 @@ CASE GVL.PRG1_Status OF
 		IF GVL.KN_001 THEN
 			GVL.PRG1_Status := 1;
 		END_IF
-	1:	// idle, wacht op object
+	1: // idle, wacht op object	
+		
+		//reset berekening voor volgende weging
+		GVL.berekendeSnelheid := 0;
+		
 		// als no object detected berekent FC1 de maximale tijd tot alarm
 		IF GVL.objectDetected = TRUE THEN
 			
@@ -59,10 +63,7 @@ CASE GVL.PRG1_Status OF
 		
 		GVL.transportActief := TRUE;
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
-		
-		//reset berekening voor volgende weging
-		GVL.berekendeSnelheid := 0;
-		
+			
 		// Runtijd tellen
 		runningTijd := runningTijd + GVL.cyclusTijd;
 		runningTijdDint := TIME_TO_DINT(runningTijd);
@@ -108,6 +109,9 @@ END_CASE
       <LineId Id="182" Count="0" />
       <LineId Id="226" Count="2" />
       <LineId Id="183" Count="6" />
+      <LineId Id="339" Count="1" />
+      <LineId Id="338" Count="0" />
+      <LineId Id="337" Count="0" />
       <LineId Id="209" Count="0" />
       <LineId Id="190" Count="0" />
       <LineId Id="208" Count="0" />
@@ -119,11 +123,7 @@ END_CASE
       <LineId Id="309" Count="0" />
       <LineId Id="306" Count="0" />
       <LineId Id="210" Count="0" />
-      <LineId Id="301" Count="0" />
-      <LineId Id="323" Count="0" />
-      <LineId Id="322" Count="0" />
-      <LineId Id="321" Count="0" />
-      <LineId Id="302" Count="0" />
+      <LineId Id="301" Count="1" />
       <LineId Id="264" Count="0" />
       <LineId Id="280" Count="0" />
       <LineId Id="314" Count="0" />
