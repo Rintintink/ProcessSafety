@@ -3,32 +3,34 @@
 ```plantuml
 
 @startuml
+
 [*] --> Inputs : System Started
-Inputs --> IDLE : PRG1 in status 1
-IDLE --> ObjectDetected : LS_001 is HIGH
-IDLE --> NoObject : LS_001 stays LOW
+Inputs --> PRG1_IDLE : PRG1 in status 1
+PRG1_IDLE --> ObjectDetected : LS_001 is HIGH
+PRG1_IDLE -> ALARM : Wait time expires
 ObjectDetected --> Inputs
-NoObject --> ALARM : Max Idletime 
+
 ALARM -> Inputs : KN_001 reset
 ALARM --> Outputs
 ObjectDetected --> Outputs
+Outputs --> Inputs
 
 State Inputs {
-   Inputs : Alarm is false
-   Inputs : WaitTime = 0 sec
+   Inputs : Set Alarm false
+   Inputs : Set WaitTime = 0 sec
 }
 
-State IDLE{
-    IDLE : 
+State PRG1_IDLE{
+    
+    PRG1_IDLE : Wait for object
+    PRG1_IDLE : Count up idle timer
 }
 
 State ObjectDetected {
-        
+        ObjectDetected : Reset wachttijd
+        ObjectDetected : Alarmstatus = false
 }
 
-State NoObject {
-        
-}
 State ALARM {
 
 }
