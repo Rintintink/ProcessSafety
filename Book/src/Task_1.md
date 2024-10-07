@@ -1,15 +1,35 @@
 # Task 1 - conveyer operation
 
-Task 1 (PRG1) manages the operation and process of the conveyer belt system.
-
 ```plantuml
-
 @startuml
-[*] --> Idle : System Started
+[*] --> OFF : Power on
 
-Idle --> Running : Start Command
-Running --> Idle : Stop Command
-Running --> Fault : Object Missing
+state OFF {
+    [*] --> WaitingForStart
+    WaitingForStart --> IDLE : KN_001 pressed
+}
 
-Fault --> Idle : Fault Cleared
+state IDLE {
+    [*] --> WaitingForObject
+    WaitingForObject --> RUNNING : Object detected
+    WaitingForObject --> FAULT : Alarm triggered
+}
+
+state RUNNING {
+    [*] --> ConveyorRunning
+    ConveyorRunning --> IDLE : Conveyor finished transporting
+    ConveyorRunning --> FAULT : Alarm triggered
+}
+
+state FAULT {
+    [*] --> AlarmState
+    AlarmState --> IDLE : Acknowledge alarm (KN_002)
+}
+
+OFF --> IDLE : KN_001 pressed
+IDLE --> RUNNING : Object detected
+RUNNING --> IDLE : Transport completed
+RUNNING --> FAULT : Alarm triggered
+FAULT --> IDLE : Acknowledge alarm (KN_002)
+
 @enduml

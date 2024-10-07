@@ -1,20 +1,30 @@
 # Communication
 
 ```plantuml
-
 @startuml
-actor Operator
-participant Task1 as "Conveyor Operation"
-participant Task2 as "Object Detection"
-participant GVL
+actor "Operator" as Operator
+participant "PRG1_Conveyer_Operation" as PRG1
+participant "PRG2_Object_Detectie" as PRG2
+participant "Global Variables" as GVL
 
-Operator -> Task1 : Start Conveyor
-Task1 -> GVL : Set Conveyor State (Running)
-Task2 -> GVL : Read Object Presence
-Task2 -> Task1 : Notify Object Missing
-Task1 -> GVL : Set Conveyor State (Fault)
-Task2 -> GVL : Set Alarm
-Task2 -> Operator : Alarm notification
-Operator -> Task2 : Reset Alarm
+Operator -> PRG1: Press KN_001 (start)
+PRG1 -> GVL: Set PRG1_Status to IDLE
+PRG1 -> PRG2: Check Object Detection (LS_001)
+
+PRG2 -> GVL: Read LS_001 (object detection)
+alt Object detected
+    PRG2 -> GVL: Reset Wachttijd
+    PRG2 -> PRG1: Continue conveyor operation
+else No object
+    PRG2 -> GVL: Increase Wachttijd
+    alt Wachttijd >= MaxWachttijd
+        PRG2 -> GVL: Set AlarmStatus to TRUE
+        PRG2 -> PRG1: Set PRG1_Status to FAULT
+    end
+end
+
+Operator -> PRG1: Press KN_002 (Acknowledge Alarm)
+PRG1 -> GVL: Reset AlarmStatus
+PRG1 -> GVL: Set PRG1_Status to IDLE
 
 @enduml
