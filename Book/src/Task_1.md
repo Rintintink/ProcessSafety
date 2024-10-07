@@ -8,7 +8,7 @@ skinparam backgroundcolor transparent
 
 [*] --> OFF : PLC Power-up
 OFF --> IDLE : Start Button Pressed
-IDLE --> RUNNING : Object Detected\nand Weighed.\nCalculate speed
+IDLE --> RUNNING : Object Detected &\nWeightime expired
 RUNNING --> IDLE : Object Transport\nComplete
 IDLE -> FAULT : Alarm\nTriggered
 FAULT -> IDLE : Alarm\nAcknowledged
@@ -22,6 +22,11 @@ state IDLE {
     
     IDLE : System is idle
     IDLE : Waiting for object detection
+    IDLE : 
+    State Detected {
+        Detected : Calculate Speed
+        
+    } 
     
 }
 

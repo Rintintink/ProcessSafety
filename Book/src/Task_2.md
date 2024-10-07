@@ -6,20 +6,20 @@
 !theme spacelab-white
 skinparam backgroundcolor transparent
 
-[*] --> Inputs : System Started
-Inputs --> PRG1_IDLE : PRG1 in status 1
+[*] --> ReadInputs : System Started
+ReadInputs --> PRG1_IDLE : PRG1 in status 1
 PRG1_IDLE --> ObjectDetected : LS_001 is HIGH
 PRG1_IDLE -> ALARM : Wait time expires
-ObjectDetected --> Inputs
+ObjectDetected --> ReadInputs
 
-ALARM -> Inputs : KN_001 reset
+ALARM -> ReadInputs : Alarm\nresetknop
 ALARM --> Outputs
 ObjectDetected --> Outputs
-Outputs --> Inputs
+Outputs --> ReadInputs
 
-State Inputs {
-   Inputs : Set Alarm false
-   Inputs : Set WaitTime = 0 sec
+State ReadInputs {
+   ReadInputs : Set Alarm false
+   ReadInputs : Set WaitTime = 0 sec
 }
 
 State PRG1_IDLE{
@@ -34,8 +34,8 @@ State ObjectDetected {
 }
 
 State ALARM {
-
 }
+
 State Outputs {
     Outputs : Set GVL Alarmstatus
     Outputs : Set GVL Objectstatus
