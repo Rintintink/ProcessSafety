@@ -50,7 +50,7 @@ CASE GVL.PRG1_Status OF
 			
 			weegTijd := weegTijd + GVL.cyclusTijd;
 			GVL.ladingGewicht := GVL.weegcelWaarde;								
-			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);
+			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);//GVL.MinGewicht, GVL.MaxGewicht,GVL.MinSpeed,GVL.MaxSpeed
 			IF weegTijd = weegEind THEN
 				GVL.PRG1_Status := 2;
 				//reset weegtijd

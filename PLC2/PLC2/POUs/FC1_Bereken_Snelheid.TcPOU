@@ -6,28 +6,39 @@
 VAR_INPUT
     Laadgewicht : DINT;    // Invoer van de weegcel
 END_VAR
+
 VAR
-    BerekendeSnelheid : REAL; 	// De berekende snelheid in REAL
-	LaadgewichtReal: REAL; 		// laadgewicht converted naar REAL;
+    // Definieer de minimale en maximale gewichten en snelheden
+    MinGewicht  : REAL := 1.0;    // Minimum gewicht, bv. 1 kg
+    MaxGewicht  : REAL := 100.0;  // Maximum gewicht, bv. 100 kg
+    MinSpeed    : REAL := 50.0;    // Minimum snelheid, bv. 0 m/s
+    MaxSpeed    : REAL := 200.0;  // Maximum snelheid, bv. 200 m/s
+
+    BerekendeSnelheid : REAL;     // De berekende snelheid in REAL
+    LaadgewichtReal   : REAL;     // Laadgewicht geconverteerd naar REAL
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-LaadgewichtReal := DINT_TO_REAL(Laadgewicht);
-// Bereken de transportbandsnelheid op basis van de laadratio
 
-BerekendeSnelheid := LaadgewichtReal / 5 * 6.5; 
+// Converteer Laadgewicht naar REAL voor de berekening
+LaadgewichtReal := DINT_TO_REAL(Laadgewicht);
+
+// Controleer of Laadgewicht binnen het verwachte bereik valt
+IF LaadgewichtReal < MinGewicht THEN
+    LaadgewichtReal := MinGewicht;  // Zorg dat het gewicht niet lager is dan MinGewicht
+ELSIF LaadgewichtReal > MaxGewicht THEN
+    LaadgewichtReal := MaxGewicht;  // Zorg dat het gewicht niet hoger is dan MaxGewicht
+END_IF
+
+// Bereken de snelheid op basis van het gewicht
+BerekendeSnelheid := MaxSpeed - ((LaadgewichtReal - MinGewicht) / (MaxGewicht - MinGewicht) * (MaxSpeed - MinSpeed));
 
 // Rond de berekende snelheid af naar een DINT waarde en retourneer deze
 FC1_Bereken_Snelheid := REAL_TO_DINT(BerekendeSnelheid);
-
 ]]></ST>
     </Implementation>
     <LineIds Name="FC1_Bereken_Snelheid">
-      <LineId Id="560" Count="0" />
-      <LineId Id="580" Count="0" />
-      <LineId Id="567" Count="0" />
-      <LineId Id="579" Count="0" />
-      <LineId Id="568" Count="4" />
+      <LineId Id="628" Count="16" />
       <LineId Id="36" Count="0" />
     </LineIds>
   </POU>
