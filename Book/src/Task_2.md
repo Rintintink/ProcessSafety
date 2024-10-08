@@ -37,8 +37,8 @@ State ALARM {
 }
 
 State Outputs {
-    Outputs : Set GVL Alarmstatus
-    Outputs : Set GVL Objectstatus
+    Outputs : Write GVL Alarmstatus
+    Outputs : Write GVL Objectstatus
         
 }
 @enduml
