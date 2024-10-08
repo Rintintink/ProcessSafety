@@ -10,7 +10,7 @@ skinparam backgroundcolor transparent
 ReadInputs --> PRG1_IDLE : PRG1 in status 1
 PRG1_IDLE --> ObjectDetected : LS_001 is HIGH
 PRG1_IDLE -> ALARM : Wait time expires
-ObjectDetected --> ReadInputs
+
 
 ALARM -> ReadInputs : Alarm\nresetknop
 ALARM --> Outputs
