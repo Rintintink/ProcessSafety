@@ -6,14 +6,14 @@
 !theme spacelab-white
 skinparam backgroundcolor transparent
 
-[*] --> ReadInputs : System Started
+[*] -right-> ReadInputs : System Started
 ReadInputs --> PRG1_IDLE : PRG1 in status 1
 PRG1_IDLE --> ObjectDetected : LS_001 is HIGH
 PRG1_IDLE -> ALARM : Wait time expires
 
 
 ALARM -> ReadInputs : Alarm\nresetknop
-ALARM --> Outputs
+ALARM -> Outputs
 ObjectDetected --> Outputs
 Outputs --> ReadInputs
 

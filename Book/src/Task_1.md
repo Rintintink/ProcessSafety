@@ -6,7 +6,7 @@
 !theme spacelab-white
 skinparam backgroundcolor transparent
 
-[*] --> OFF : PLC Power-up
+[*] -right-> OFF : PLC Power-up
 OFF --> IDLE : Start Button Pressed
 IDLE --> RUNNING : Object Detected &\nWeightime expired
 RUNNING --> IDLE : Object Transport\nComplete
