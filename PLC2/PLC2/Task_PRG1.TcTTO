@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Task Name="Task_PRG1" Id="{eccf379b-7c18-4861-8f8c-eb9e1b54ce00}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>10000</CycleTime>
+    <Priority>1</Priority>
+    <PouCall>
+      <Name>PRG1_Conveyer_Operation</Name>
+    </PouCall>
+    <TaskFBGuid>{f3c9ca08-3c1a-4810-b595-65b6283195a5}</TaskFBGuid>
+    <Fb_init>{b5d3b13c-a3a4-4a6c-8bca-fb393d96ab9d}</Fb_init>
+    <Fb_exit>{cd0c0b94-1a21-43ee-a473-1183706a19a1}</Fb_exit>
+    <CycleUpdate>{baf84e94-f606-453b-b559-43fc97183181}</CycleUpdate>
+    <PostCycleUpdate>{c2acaaf8-0371-4c37-b84d-ab3058b64dec}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

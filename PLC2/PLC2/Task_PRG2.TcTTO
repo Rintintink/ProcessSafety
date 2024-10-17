@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Task Name="Task_PRG2" Id="{f325e9f1-05d4-479c-94fc-9b6ef56191c7}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>10000</CycleTime>
+    <Priority>2</Priority>
+    <PouCall>
+      <Name>PRG2_Object_Detectie</Name>
+    </PouCall>
+    <TaskFBGuid>{e1560e83-03c4-4f39-b55d-637b942d9b83}</TaskFBGuid>
+    <Fb_init>{b101ce6b-35cb-4bf9-af77-04159c92ee9d}</Fb_init>
+    <Fb_exit>{5ff42269-30a0-4c03-8b89-89a26b8f8afa}</Fb_exit>
+    <CycleUpdate>{557fc05f-9930-4c6b-9196-ad846b660af6}</CycleUpdate>
+    <PostCycleUpdate>{0af291a3-2d3f-4cf0-8c6a-0e25c70f1073}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

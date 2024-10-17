@@ -1,10 +1,16 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44">
-	<Project ProjectGUID="{FFAAE7AD-74F8-4B30-AAD3-8D8BF122475C}" TargetNetId="39.231.85.117.1.1" Target64Bit="true" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{FFAAE7AD-74F8-4B30-AAD3-8D8BF122475C}" TargetNetId="39.231.85.117.1.1" ShowHideConfigurations="#x106">
 		<System>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
+				</Task>
+				<Task Id="4" Priority="1" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>Task_PRG1</Name>
+				</Task>
+				<Task Id="5" Priority="2" CycleTime="100000" AmsPort="352" AdtTasks="true">
+					<Name>Task_PRG2</Name>
 				</Task>
 			</Tasks>
 		</System>

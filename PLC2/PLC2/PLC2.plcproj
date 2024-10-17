@@ -39,6 +39,12 @@
     <Compile Include="POUs\PRG2_Object_Detectie.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Task_PRG1.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Task_PRG2.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Visualization Manager.TcVMO">
       <SubType>Code</SubType>
     </Compile>
