@@ -3,7 +3,7 @@
   <POU Name="MAIN" Id="{08eb5067-a124-4fda-bdc0-191f359724d7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	Modus: STRING(INT#8) := 'OFF';
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -15,21 +15,10 @@ END_VAR
 
 *)
 
-CASE GVL.PRG1_Status OF 
-	0: 
-		MAIN.Modus := 'OFF'; 
-	1:
-		MAIN.Modus := 'IDLE';
-	2:
-		MAIN.Modus := 'RUNNING';
-	3:
-		MAIN.Modus := 'FAULT';
-	
-END_CASE
 
-PRG1_Conveyer_Operation();
 
-PRG2_Object_Detectie();
+//PRG1_Conveyer_Operation();
+//PRG2_Object_Detectie();
 
 ]]></ST>
     </Implementation>
@@ -38,9 +27,10 @@ PRG2_Object_Detectie();
       <LineId Id="140" Count="1" />
       <LineId Id="146" Count="2" />
       <LineId Id="139" Count="0" />
-      <LineId Id="169" Count="11" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="180" Count="0" />
       <LineId Id="153" Count="0" />
-      <LineId Id="110" Count="1" />
+      <LineId Id="110" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="19" Count="0" />
       <LineId Id="6" Count="0" />

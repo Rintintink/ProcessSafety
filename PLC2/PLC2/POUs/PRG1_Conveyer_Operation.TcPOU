@@ -4,10 +4,11 @@
     <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
 VAR_INPUT
 	//objectMissing : BOOL;
-	weegTijd : TIME := T#0S;
-	weegEind : TIME := T#5S;
-	runningTijd : TIME := T#0S;
-	detectieLaagTijd  : TIME := T#4S;
+	weegTijd 			: TIME 			:= T#0S;
+	weegEind 			: TIME 			:= T#5S;
+	runningTijd  		: TIME 			:= T#0S;
+	detectieLaagTijd  	: TIME 			:= T#4S;
+	Modus				: STRING(INT#8) := 'OFF';
 END_VAR
 
 VAR
@@ -22,6 +23,16 @@ END_VAR]]></Declaration>
 	// 3 = FAULT
 
 *)
+CASE GVL.PRG1_Status OF 
+	0: 
+		Modus := 'OFF'; 
+	1:
+		Modus := 'IDLE';
+	2:
+		Modus := 'RUNNING';
+	3:
+		Modus := 'FAULT';
+END_CASE
 
 // Read startknop
 IF NOT GVL.KN_001 AND NOT GVL.alarmActief THEN
@@ -101,7 +112,10 @@ END_CASE
       <LineId Id="258" Count="4" />
       <LineId Id="278" Count="0" />
       <LineId Id="257" Count="0" />
-      <LineId Id="177" Count="3" />
+      <LineId Id="353" Count="8" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="363" Count="0" />
+      <LineId Id="178" Count="2" />
       <LineId Id="235" Count="0" />
       <LineId Id="181" Count="0" />
       <LineId Id="230" Count="0" />

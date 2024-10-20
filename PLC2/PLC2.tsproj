@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44">
-	<Project ProjectGUID="{FFAAE7AD-74F8-4B30-AAD3-8D8BF122475C}" TargetNetId="39.231.85.117.1.1" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{FFAAE7AD-74F8-4B30-AAD3-8D8BF122475C}" TargetNetId="39.231.85.117.1.1" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
 			<Tasks>
-				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+				<Task Id="1" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="4" Priority="1" CycleTime="100000" AmsPort="351" AdtTasks="true">
+				<Task Id="3" Priority="1" CycleTime="100000" AmsPort="351" AdtTasks="true">
 					<Name>Task_PRG1</Name>
 				</Task>
 				<Task Id="5" Priority="2" CycleTime="100000" AmsPort="352" AdtTasks="true">
@@ -16,11 +16,11 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{2B34DA1A-3E9A-8522-0FFE-59C2636A08A8}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{72D761C9-42AB-F4D7-2AED-7CE09DF873B6}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
+						<Name>Task_PRG1 Inputs</Name>
 						<Var>
 							<Name>GVL.KN_001</Name>
 							<Comment><![CDATA[ systeem opstartknop]]></Comment>
@@ -31,6 +31,32 @@
 							<Comment><![CDATA[ Acknowledge All Alarms ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
+						<Var>
+							<Name>GVL.weegcelWaarde</Name>
+							<Comment><![CDATA[ ingelezen gewicht van de lading ]]></Comment>
+							<Type>DINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>Task_PRG1 Outputs</Name>
+						<Var>
+							<Name>GVL.transportActief</Name>
+							<Comment><![CDATA[ transportbaan aangezet signaal]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>GVL.alarmActief</Name>
+							<Comment><![CDATA[ alarm melding]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>GVL.geschrevenSnelheid</Name>
+							<Comment><![CDATA[ snelheid uitgeschreven naar motor]]></Comment>
+							<Type>DINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="1" ContextId="2" AreaNo="32">
+						<Name>PlcTask Inputs</Name>
 						<Var>
 							<Name>GVL.In2Res</Name>
 							<Comment><![CDATA[ Reserve]]></Comment>
@@ -65,11 +91,6 @@
 							<Name>GVL.In9Res</Name>
 							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
-						</Var>
-						<Var>
-							<Name>GVL.weegcelWaarde</Name>
-							<Comment><![CDATA[ ingelezen gewicht van de lading ]]></Comment>
-							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.In11Res</Name>
@@ -117,18 +138,8 @@
 							<Type>DINT</Type>
 						</Var>
 					</Vars>
-					<Vars VarGrpType="2" AreaNo="1">
+					<Vars VarGrpType="2" ContextId="2" AreaNo="33">
 						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>GVL.transportActief</Name>
-							<Comment><![CDATA[ transportbaan aangezet signaal]]></Comment>
-							<Type>BIT</Type>
-						</Var>
-						<Var>
-							<Name>GVL.alarmActief</Name>
-							<Comment><![CDATA[ alarm melding]]></Comment>
-							<Type>BIT</Type>
-						</Var>
 						<Var>
 							<Name>GVL.Uit2Res</Name>
 							<Comment><![CDATA[ Reserve]]></Comment>
@@ -168,11 +179,6 @@
 							<Name>GVL.Uit9Res</Name>
 							<Comment><![CDATA[ Reserve]]></Comment>
 							<Type>BIT</Type>
-						</Var>
-						<Var>
-							<Name>GVL.geschrevenSnelheid</Name>
-							<Comment><![CDATA[ snelheid uitgeschreven naar motor]]></Comment>
-							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Uit11Res</Name>
@@ -223,15 +229,35 @@
 					<Contexts>
 						<Context>
 							<Id NeedCalleeCall="true">0</Id>
-							<Name>PlcTask</Name>
+							<Name>Task_PRG1</Name>
 							<ManualConfig>
 								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>1</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+						<Context>
+							<Id NeedCalleeCall="true">1</Id>
+							<Name>Task_PRG2</Name>
+							<ManualConfig>
+								<OTCID>#x02010050</OTCID>
+							</ManualConfig>
+							<Priority>2</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+						<Context>
+							<Id NeedCalleeCall="true">2</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010010</OTCID>
 							</ManualConfig>
 							<Priority>20</Priority>
 							<CycleTime>10000000</CycleTime>
 						</Context>
 					</Contexts>
 					<TaskPouOids>
+						<TaskPouOid Prio="1" OTCID="#x08502003"/>
+						<TaskPouOid Prio="2" OTCID="#x08502002"/>
 						<TaskPouOid Prio="20" OTCID="#x08502001"/>
 					</TaskPouOids>
 				</Instance>
