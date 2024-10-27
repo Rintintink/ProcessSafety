@@ -25,7 +25,7 @@ END_VAR]]></Declaration>
 *)
 CASE GVL.PRG1_Status OF 
 	0: 
-		Modus := 'OFF'; 
+		Modus := 'Test Branch'; 
 	1:
 		Modus := 'IDLE';
 	2:
