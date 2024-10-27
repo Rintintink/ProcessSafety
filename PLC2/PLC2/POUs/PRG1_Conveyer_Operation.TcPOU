@@ -25,13 +25,13 @@ END_VAR]]></Declaration>
 *)
 CASE GVL.PRG1_Status OF 
 	0: 
-		Modus := 'Test Branch'; 
+		 
 	1:
-		Modus := 'IDLE';
+		
 	2:
-		Modus := 'RUNNING';
+		
 	3:
-		Modus := 'FAULT';
+		
 END_CASE
 
 // Read startknop
@@ -48,10 +48,13 @@ END_IF
 //case functie, voor conveyerstatussen
 CASE GVL.PRG1_Status OF
 	0:	// OFF, wacht op startknop
+		Modus := 'OFF';
+		
 		IF GVL.KN_001 THEN
 			GVL.PRG1_Status := 1;
 		END_IF
 	1: // idle, wacht op object	
+		Modus := 'IDLE';
 		
 		//reset berekening voor volgende weging
 		GVL.berekendeSnelheid := 0;
@@ -71,13 +74,14 @@ CASE GVL.PRG1_Status OF
 		END_IF
 		
 	2: //running
+		Modus := 'RUNNING';
 		
 		GVL.transportActief := TRUE;
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
 			
 		// Runtijd tellen
 		runningTijd := runningTijd + 1;
-		runningTijdDint := INT_TO_DINT(runningTijd);
+		
 		
 		// 
 		IF runningTijd > 2 THEN
@@ -85,7 +89,7 @@ CASE GVL.PRG1_Status OF
 		END_IF
 		
 		// Tijd conversie naar transportbaan voortgang.
-		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijdDint/10);
+		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijd/2);
 		
 		// Vergelijk voortgang met einde transportbaan, vervolgens reset waarden en status naar IDLE
 		IF GVL.transportBaanVoortgang >= GVL.transportBaanEinde THEN
@@ -98,6 +102,7 @@ CASE GVL.PRG1_Status OF
 		
 		
 	3: // Fault
+		Modus := 'FAULT';
 		IF GVL.KN_002 THEN
 			//GVL.KN_001 := FALSE;
 			GVL.alarmActief := FALSE;
@@ -122,8 +127,12 @@ END_CASE
       <LineId Id="229" Count="0" />
       <LineId Id="182" Count="0" />
       <LineId Id="226" Count="2" />
-      <LineId Id="183" Count="6" />
-      <LineId Id="339" Count="1" />
+      <LineId Id="183" Count="2" />
+      <LineId Id="376" Count="1" />
+      <LineId Id="186" Count="3" />
+      <LineId Id="339" Count="0" />
+      <LineId Id="378" Count="0" />
+      <LineId Id="340" Count="0" />
       <LineId Id="338" Count="0" />
       <LineId Id="337" Count="0" />
       <LineId Id="209" Count="0" />
@@ -134,6 +143,7 @@ END_CASE
       <LineId Id="196" Count="2" />
       <LineId Id="219" Count="0" />
       <LineId Id="199" Count="0" />
+      <LineId Id="379" Count="0" />
       <LineId Id="309" Count="0" />
       <LineId Id="306" Count="0" />
       <LineId Id="210" Count="0" />
@@ -158,6 +168,7 @@ END_CASE
       <LineId Id="236" Count="0" />
       <LineId Id="201" Count="0" />
       <LineId Id="231" Count="0" />
+      <LineId Id="380" Count="0" />
       <LineId Id="263" Count="0" />
       <LineId Id="232" Count="0" />
       <LineId Id="234" Count="0" />
