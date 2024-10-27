@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <Task Name="Task_PRG2" Id="{f325e9f1-05d4-479c-94fc-9b6ef56191c7}">
     <!--CycleTime in micro seconds.-->
-    <CycleTime>10000</CycleTime>
+    <CycleTime>1000000</CycleTime>
     <Priority>2</Priority>
     <PouCall>
       <Name>PRG2_Object_Detectie</Name>

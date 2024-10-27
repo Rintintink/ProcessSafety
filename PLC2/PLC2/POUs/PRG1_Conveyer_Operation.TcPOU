@@ -4,10 +4,10 @@
     <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
 VAR_INPUT
 	//objectMissing : BOOL;
-	weegTijd 			: TIME 			:= T#0S;
-	weegEind 			: TIME 			:= T#5S;
-	runningTijd  		: TIME 			:= T#0S;
-	detectieLaagTijd  	: TIME 			:= T#4S;
+	weegTijd 			: INT 			:= 0;
+	weegEind 			: INT 			:= 5;
+	runningTijd  		: INT 			:= 0;
+	detectieLaagTijd  	: INT 			:= 4;
 	Modus				: STRING(INT#8) := 'OFF';
 END_VAR
 
@@ -59,13 +59,13 @@ CASE GVL.PRG1_Status OF
 		// als no object detected berekent FC1 de maximale tijd tot alarm
 		IF GVL.objectDetected = TRUE THEN
 			
-			weegTijd := weegTijd + GVL.cyclusTijd;
+			weegTijd := weegTijd + 1;
 			GVL.ladingGewicht := GVL.weegcelWaarde;								
 			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);//GVL.MinGewicht, GVL.MaxGewicht,GVL.MinSpeed,GVL.MaxSpeed
 			IF weegTijd = weegEind THEN
 				GVL.PRG1_Status := 2;
 				//reset weegtijd
-				weegTijd := T#0S;
+				weegTijd := 0;
 			END_IF
 			
 		END_IF
@@ -76,23 +76,23 @@ CASE GVL.PRG1_Status OF
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
 			
 		// Runtijd tellen
-		runningTijd := runningTijd + GVL.cyclusTijd;
-		runningTijdDint := TIME_TO_DINT(runningTijd);
+		runningTijd := runningTijd + 1;
+		runningTijdDint := INT_TO_DINT(runningTijd);
 		
 		// 
-		IF runningTijd > T#2S THEN
+		IF runningTijd > 2 THEN
 			GVL.LS_001 := FALSE;
 		END_IF
 		
 		// Tijd conversie naar transportbaan voortgang.
-		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijdDint/1000);
+		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijdDint/10);
 		
 		// Vergelijk voortgang met einde transportbaan, vervolgens reset waarden en status naar IDLE
 		IF GVL.transportBaanVoortgang >= GVL.transportBaanEinde THEN
 			GVL.transportActief := FALSE;
 			GVL.transportBaanVoortgang := 0;
 			GVL.geschrevenSnelheid := 0; 
-			runningTijd := T#0S;
+			runningTijd := 0;
 			GVL.PRG1_Status := 1;
 		END_IF
 		

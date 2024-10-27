@@ -6,17 +6,17 @@
 				<Task Id="1" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="3" Priority="1" CycleTime="100000" AmsPort="351" AdtTasks="true">
+				<Task Id="3" Priority="1" CycleTime="10000000" AmsPort="351" AdtTasks="true">
 					<Name>Task_PRG1</Name>
 				</Task>
-				<Task Id="5" Priority="2" CycleTime="100000" AmsPort="352" AdtTasks="true">
+				<Task Id="5" Priority="2" CycleTime="10000000" AmsPort="352" AdtTasks="true">
 					<Name>Task_PRG2</Name>
 				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{72D761C9-42AB-F4D7-2AED-7CE09DF873B6}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{ADD929F6-7510-5CFB-8F07-5C3D483D2288}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -234,7 +234,7 @@
 								<OTCID>#x02010030</OTCID>
 							</ManualConfig>
 							<Priority>1</Priority>
-							<CycleTime>10000000</CycleTime>
+							<CycleTime>1000000000</CycleTime>
 						</Context>
 						<Context>
 							<Id NeedCalleeCall="true">1</Id>
@@ -243,7 +243,7 @@
 								<OTCID>#x02010050</OTCID>
 							</ManualConfig>
 							<Priority>2</Priority>
-							<CycleTime>10000000</CycleTime>
+							<CycleTime>1000000000</CycleTime>
 						</Context>
 						<Context>
 							<Id NeedCalleeCall="true">2</Id>

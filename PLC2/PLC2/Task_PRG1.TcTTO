@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <Task Name="Task_PRG1" Id="{eccf379b-7c18-4861-8f8c-eb9e1b54ce00}">
     <!--CycleTime in micro seconds.-->
-    <CycleTime>10000</CycleTime>
+    <CycleTime>1000000</CycleTime>
     <Priority>1</Priority>
     <PouCall>
       <Name>PRG1_Conveyer_Operation</Name>

@@ -5,8 +5,8 @@
 VAR
     ObjectAanwezig : BOOL;    			// Invoer van de sensor, TRUE als object gedetecteerd
     AlarmStatus    : BOOL;    			// Uitvoer, TRUE als er geen object is gedetecteerd
-    MaxWachttijd   : TIME := T#30S;    	// Maximale tijd om te wachten op een object
-    Wachttijd      : TIME;    			// Huidig wachttijd zonder objectdetectie
+    MaxWachttijd   : INT := 30;    	// Maximale tijd om te wachten op een object
+    Wachttijd      : INT := 0;    			// Huidig wachttijd zonder objectdetectie
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
@@ -16,7 +16,7 @@ ObjectAanwezig := GVL.LS_001;
 
 //reset wachttijd met alarm acknowledge
 IF GVL.KN_002 THEN
-	Wachttijd := T#0S;
+	Wachttijd := 0;
 	AlarmStatus := FALSE;
 	//GVL.PRG1_Status := 1;
 END_IF
@@ -26,12 +26,12 @@ IF GVL.PRG1_Status = 1 THEN
 	// Controleer of een object aanwezig is op de transportband
 	IF ObjectAanwezig = TRUE THEN
 		// Object gedetecteerd, reset de wachttijd en schakel het alarm uit
-		Wachttijd := T#0S;
+		Wachttijd := 0;
 		AlarmStatus := FALSE;
 	ELSE//wacht op detectie, tot maximale tijd verstreken en alarm geactiveerd
 		// Geen object gedetecteerd, verhoog de wachttijd
 			
-		Wachttijd := Wachttijd + GVL.cyclusTijd;  // Verhoog de gewachtte tijd per cyclus 
+		Wachttijd := Wachttijd + 1;  // Verhoog de gewachtte tijd per cyclus 
 	
 		// Activeer het alarm als de wachttijd de maximale tijd overschrijdt
 		IF Wachttijd >= MaxWachttijd THEN
