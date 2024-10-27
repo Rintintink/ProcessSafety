@@ -15,25 +15,7 @@ VAR
 	runningTijdDint: DINT;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* 
-	// GVL.PRG1_OperatieModus statussen
-	// 0 = OFF
-	// 1 = IDLE
-	// 2 = RUNNING
-	// 3 = FAULT
-
-*)
-CASE GVL.PRG1_Status OF 
-	0: 
-		 
-	1:
-		
-	2:
-		
-	3:
-		
-END_CASE
-
+      <ST><![CDATA[
 // Read startknop
 IF NOT GVL.KN_001 AND NOT GVL.alarmActief THEN
 	GVL.PRG1_Status := 0;
@@ -113,12 +95,6 @@ END_CASE
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
-      <LineId Id="243" Count="0" />
-      <LineId Id="258" Count="4" />
-      <LineId Id="278" Count="0" />
-      <LineId Id="257" Count="0" />
-      <LineId Id="353" Count="8" />
-      <LineId Id="177" Count="0" />
       <LineId Id="363" Count="0" />
       <LineId Id="178" Count="2" />
       <LineId Id="235" Count="0" />
