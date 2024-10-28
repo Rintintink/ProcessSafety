@@ -3,37 +3,20 @@
   <POU Name="PRG1_Conveyer_Operation" Id="{fa1e73bd-a5a7-4194-991b-8213e2bc5537}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG1_Conveyer_Operation
 VAR_INPUT
-	//objectMissing : BOOL;
-	weegTijd 			: INT 			:= 0;
-	weegEind 			: INT 			:= 5;
-	runningTijd  		: INT 			:= 0;
-	detectieLaagTijd  	: INT 			:= 4;
-	Modus				: STRING(INT#8) := 'OFF';
+	
 END_VAR
-
 VAR
-	runningTijdDint: DINT;
+	weegTijd 			: INT 			:= 0;
+	weegEind 			: INT 			:= 50;
+	runningTijd  		: INT 			:= 0;
+	detectieLaagTijd  	: INT 			:= 40;
+	alarmTijd			: INT			:= 0;
+	Modus				: STRING(INT#8) := 'OFF';
+	voortangDeling		: INT			:= 100;
+	checkpunt			: INT 			:= 0;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* 
-	// GVL.PRG1_OperatieModus statussen
-	// 0 = OFF
-	// 1 = IDLE
-	// 2 = RUNNING
-	// 3 = FAULT
-
-*)
-CASE GVL.PRG1_Status OF 
-	0: 
-		Modus := 'OFF'; 
-	1:
-		Modus := 'IDLE';
-	2:
-		Modus := 'RUNNING';
-	3:
-		Modus := 'FAULT';
-END_CASE
-
+      <ST><![CDATA[
 // Read startknop
 IF NOT GVL.KN_001 AND NOT GVL.alarmActief THEN
 	GVL.PRG1_Status := 0;
@@ -48,10 +31,13 @@ END_IF
 //case functie, voor conveyerstatussen
 CASE GVL.PRG1_Status OF
 	0:	// OFF, wacht op startknop
+		Modus := 'OFF';
+		
 		IF GVL.KN_001 THEN
 			GVL.PRG1_Status := 1;
 		END_IF
 	1: // idle, wacht op object	
+		Modus := 'IDLE';
 		
 		//reset berekening voor volgende weging
 		GVL.berekendeSnelheid := 0;
@@ -59,10 +45,10 @@ CASE GVL.PRG1_Status OF
 		// als no object detected berekent FC1 de maximale tijd tot alarm
 		IF GVL.objectDetected = TRUE THEN
 			
-			weegTijd := weegTijd + 1;
+			weegTijd := weegTijd + 2;
 			GVL.ladingGewicht := GVL.weegcelWaarde;								
 			GVL.berekendeSnelheid := FC1_Bereken_Snelheid(GVL.ladingGewicht);//GVL.MinGewicht, GVL.MaxGewicht,GVL.MinSpeed,GVL.MaxSpeed
-			IF weegTijd = weegEind THEN
+			IF weegTijd >= weegEind THEN
 				GVL.PRG1_Status := 2;
 				//reset weegtijd
 				weegTijd := 0;
@@ -71,21 +57,20 @@ CASE GVL.PRG1_Status OF
 		END_IF
 		
 	2: //running
+		Modus := 'RUNNING';
 		
 		GVL.transportActief := TRUE;
 		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
 			
 		// Runtijd tellen
-		runningTijd := runningTijd + 1;
-		runningTijdDint := INT_TO_DINT(runningTijd);
+		runningTijd := runningTijd + 10;
 		
-		// 
-		IF runningTijd > 2 THEN
+		IF runningTijd > 4 THEN // reset sensor
 			GVL.LS_001 := FALSE;
 		END_IF
 		
 		// Tijd conversie naar transportbaan voortgang.
-		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijdDint/10);
+		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijd/voortangDeling);
 		
 		// Vergelijk voortgang met einde transportbaan, vervolgens reset waarden en status naar IDLE
 		IF GVL.transportBaanVoortgang >= GVL.transportBaanEinde THEN
@@ -96,24 +81,16 @@ CASE GVL.PRG1_Status OF
 			GVL.PRG1_Status := 1;
 		END_IF
 		
-		
 	3: // Fault
+		Modus := 'FAULT';
 		IF GVL.KN_002 THEN
-			//GVL.KN_001 := FALSE;
 			GVL.alarmActief := FALSE;
 			GVL.PRG1_Status := 1;
 		END_IF
-			
 END_CASE
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG1_Conveyer_Operation">
-      <LineId Id="243" Count="0" />
-      <LineId Id="258" Count="4" />
-      <LineId Id="278" Count="0" />
-      <LineId Id="257" Count="0" />
-      <LineId Id="353" Count="8" />
-      <LineId Id="177" Count="0" />
       <LineId Id="363" Count="0" />
       <LineId Id="178" Count="2" />
       <LineId Id="235" Count="0" />
@@ -122,8 +99,12 @@ END_CASE
       <LineId Id="229" Count="0" />
       <LineId Id="182" Count="0" />
       <LineId Id="226" Count="2" />
-      <LineId Id="183" Count="6" />
-      <LineId Id="339" Count="1" />
+      <LineId Id="183" Count="2" />
+      <LineId Id="376" Count="1" />
+      <LineId Id="186" Count="3" />
+      <LineId Id="339" Count="0" />
+      <LineId Id="378" Count="0" />
+      <LineId Id="340" Count="0" />
       <LineId Id="338" Count="0" />
       <LineId Id="337" Count="0" />
       <LineId Id="209" Count="0" />
@@ -134,14 +115,13 @@ END_CASE
       <LineId Id="196" Count="2" />
       <LineId Id="219" Count="0" />
       <LineId Id="199" Count="0" />
+      <LineId Id="379" Count="0" />
       <LineId Id="309" Count="0" />
       <LineId Id="306" Count="0" />
       <LineId Id="210" Count="0" />
       <LineId Id="301" Count="1" />
       <LineId Id="264" Count="0" />
       <LineId Id="280" Count="0" />
-      <LineId Id="314" Count="0" />
-      <LineId Id="319" Count="0" />
       <LineId Id="318" Count="0" />
       <LineId Id="315" Count="1" />
       <LineId Id="303" Count="1" />
@@ -155,14 +135,13 @@ END_CASE
       <LineId Id="305" Count="0" />
       <LineId Id="287" Count="0" />
       <LineId Id="269" Count="0" />
-      <LineId Id="236" Count="0" />
       <LineId Id="201" Count="0" />
       <LineId Id="231" Count="0" />
-      <LineId Id="263" Count="0" />
+      <LineId Id="380" Count="0" />
       <LineId Id="232" Count="0" />
-      <LineId Id="234" Count="0" />
+      <LineId Id="428" Count="0" />
       <LineId Id="233" Count="0" />
-      <LineId Id="202" Count="1" />
+      <LineId Id="203" Count="0" />
       <LineId Id="45" Count="0" />
     </LineIds>
   </POU>
