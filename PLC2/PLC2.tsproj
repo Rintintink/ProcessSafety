@@ -16,7 +16,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{F839E4A6-75E6-4819-61C8-B1E5F93ACD44}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{F4353A8E-CF02-AB52-30B8-D3BCF70AAA4E}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -24,11 +24,6 @@
 						<Var>
 							<Name>GVL.KN_001</Name>
 							<Comment><![CDATA[ systeem opstartknop]]></Comment>
-							<Type>BIT</Type>
-						</Var>
-						<Var>
-							<Name>GVL.KN_002</Name>
-							<Comment><![CDATA[ Acknowledge All Alarms ]]></Comment>
 							<Type>BIT</Type>
 						</Var>
 						<Var>

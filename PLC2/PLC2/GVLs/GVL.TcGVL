@@ -9,7 +9,7 @@ VAR_GLOBAL
 // -----------------------------------------Ingangen	
 // Digitale Ingangen
 	KN_001 			AT%IX0.0 : BOOL := 0;  // systeem opstartknop
-	KN_002 			AT%IX0.1 : BOOL := 0;  // Acknowledge All Alarms 
+	KN_002 			AT%MX0.1 : BOOL := 0;  // Acknowledge All Alarms -- 	(MX om de knop weer laag te schrijven, kan niet naar IX schrijven ¯\_(ツ)_/¯  )
 	In2Res 			AT%IX0.2 : BOOL := 0;  // Reserve
 	In3Res 			AT%IX0.3 : BOOL := 0;  // Reserve 
 	In4Res 			AT%IX0.4 : BOOL := 0;  // Reserve 
@@ -68,8 +68,8 @@ VAR_GLOBAL
 	ladingGewicht 			AT%MW12 : DINT := 0; 	// opslag gelezen gewicht
 	berekendeSnelheid		AT%MW14 : DINT;
 	transportBaanVoortgang 	AT%MW16 : DINT;
-	transportBaanEinde		AT%MW18 : DINT := 800;
-	cyclusTijd				AT%MW20 : TIME := T#10MS;
+	transportBaanEinde		AT%MW18 : UINT := 800;
+//	cyclusTijd				AT%MW20 : TIME := T#10MS;
 	
 	//variabelen voor snelheidberekening
 
