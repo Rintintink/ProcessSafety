@@ -14,13 +14,12 @@ END_VAR]]></Declaration>
 // lezen ingangen
 ObjectAanwezig := GVL.LS_001; 
 
+
 //reset wachttijd met alarm acknowledge
 IF GVL.KN_002 THEN
 	Wachttijd := 0;
 	AlarmStatus := FALSE;
-	//GVL.PRG1_Status := 1;
 END_IF
-
 
 IF GVL.PRG1_Status = 1 THEN
 	// Controleer of een object aanwezig is op de transportband
@@ -52,13 +51,11 @@ GVL.alarmActief 	:= 	AlarmStatus;	// sturen naar digitale uitgang
       <LineId Id="70" Count="0" />
       <LineId Id="41" Count="1" />
       <LineId Id="12" Count="0" />
+      <LineId Id="132" Count="0" />
       <LineId Id="106" Count="0" />
-      <LineId Id="103" Count="2" />
-      <LineId Id="107" Count="0" />
-      <LineId Id="115" Count="0" />
+      <LineId Id="127" Count="3" />
       <LineId Id="102" Count="0" />
-      <LineId Id="114" Count="0" />
-      <LineId Id="79" Count="0" />
+      <LineId Id="133" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="82" Count="6" />
       <LineId Id="97" Count="0" />

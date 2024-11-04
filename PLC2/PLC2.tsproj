@@ -16,7 +16,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{3981BDBA-F328-432F-B1EF-B5AB0715F9D7}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{F4353A8E-CF02-AB52-30B8-D3BCF70AAA4E}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC2\PLC2.tmc" TmcHash="{0641B26B-3EC2-D1FD-3D76-F101244E2F61}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -45,7 +45,7 @@
 							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.geschrevenSnelheid</Name>
+							<Name>GVL.snelheidSetpoint</Name>
 							<Comment><![CDATA[ snelheid uitgeschreven naar motor]]></Comment>
 							<Type>DINT</Type>
 						</Var>

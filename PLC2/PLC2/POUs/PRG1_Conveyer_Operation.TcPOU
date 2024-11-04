@@ -12,7 +12,7 @@ VAR
 	detectieLaagTijd  	: INT 			:= 40;
 	alarmTijd			: INT			:= 0;
 	Modus				: STRING(INT#8) := 'OFF';
-	voortangDeling		: INT			:= 100;
+	voortangDeler		: INT			:= 100; //deler om voortgang te berekenen.
 	checkpunt			: INT 			:= 0;
 END_VAR]]></Declaration>
     <Implementation>
@@ -36,6 +36,7 @@ CASE GVL.PRG1_Status OF
 		IF GVL.KN_001 THEN
 			GVL.PRG1_Status := 1;
 		END_IF
+		
 	1: // idle, wacht op object	
 		Modus := 'IDLE';
 		
@@ -60,23 +61,23 @@ CASE GVL.PRG1_Status OF
 		Modus := 'RUNNING';
 		
 		GVL.transportActief := TRUE;
-		GVL.geschrevenSnelheid := GVL.berekendeSnelheid;
+		GVL.snelheidSetpoint := GVL.berekendeSnelheid;
 			
 		// Runtijd tellen
-		runningTijd := runningTijd + 10;
+		runningTijd := runningTijd + 10; // 10 * 100ms = per seconde optellen.
 		
 		IF runningTijd > 4 THEN // reset sensor
 			GVL.LS_001 := FALSE;
 		END_IF
 		
 		// Tijd conversie naar transportbaan voortgang.
-		GVL.transportBaanVoortgang := GVL.geschrevenSnelheid * (runningTijd/voortangDeling);
+		GVL.transportBaanVoortgang := GVL.snelheidSetpoint * (runningTijd/voortangDeler);
 		
 		// Vergelijk voortgang met einde transportbaan, vervolgens reset waarden en status naar IDLE
 		IF GVL.transportBaanVoortgang >= GVL.transportBaanEinde THEN
 			GVL.transportActief := FALSE;
 			GVL.transportBaanVoortgang := 0;
-			GVL.geschrevenSnelheid := 0; 
+			GVL.snelheidSetpoint := 0; 
 			runningTijd := 0;
 			GVL.PRG1_Status := 1;
 		END_IF
@@ -101,7 +102,9 @@ END_CASE
       <LineId Id="226" Count="2" />
       <LineId Id="183" Count="2" />
       <LineId Id="376" Count="1" />
-      <LineId Id="186" Count="3" />
+      <LineId Id="186" Count="2" />
+      <LineId Id="456" Count="0" />
+      <LineId Id="189" Count="0" />
       <LineId Id="339" Count="0" />
       <LineId Id="378" Count="0" />
       <LineId Id="340" Count="0" />
@@ -140,7 +143,7 @@ END_CASE
       <LineId Id="380" Count="0" />
       <LineId Id="232" Count="0" />
       <LineId Id="428" Count="0" />
-      <LineId Id="233" Count="0" />
+      <LineId Id="453" Count="0" />
       <LineId Id="203" Count="0" />
       <LineId Id="45" Count="0" />
     </LineIds>

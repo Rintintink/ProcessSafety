@@ -13,7 +13,7 @@ VAR_GLOBAL
 	In2Res 			AT%IX0.2 : BOOL := 0;  // Reserve
 	In3Res 			AT%IX0.3 : BOOL := 0;  // Reserve 
 	In4Res 			AT%IX0.4 : BOOL := 0;  // Reserve 
-	LS_001 			AT%MX0.5 : BOOL := 0;  // objectdetectie sensor weegcel (MX om d.m.v. timer laag te schrijven, kan niet naar IX schrijven ¯\_(ツ)_/¯  )
+	LS_001 			AT%MX0.3 : BOOL := 0;  // objectdetectie sensor weegcel (MX om d.m.v. timer laag te schrijven, kan niet naar IX schrijven ¯\_(ツ)_/¯  )
 	LS_002 			AT%IX0.6 : BOOL := 0;  // objectdetectie sensor eind van transportbaan 
 	In7Res 			AT%IX0.7 : BOOL := 0;  // Reserve 
 	In8Res 			AT%IX1.0 : BOOL := 0;  // Reserve 
@@ -45,7 +45,7 @@ VAR_GLOBAL
 	Uit9Res 			AT%QX1.1 : BOOL := 0;  // Reserve
 
 // Analoge Uitgangen 
-	geschrevenSnelheid 		AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
+	snelheidSetpoint 		AT%QW10 : DINT := 0;  // snelheid uitgeschreven naar motor
 	Uit11Res 				AT%QW12 : DINT := 0;  // Reserve
 	Uit12Res				AT%QW14 : DINT := 0;  // Reserve
 	Uit13Res 				AT%QW16 : DINT := 0;  // Reserve
@@ -56,48 +56,22 @@ VAR_GLOBAL
 	Uit18Res 				AT%QW26 : DINT := 0;  // Reserve 
 	Uit19Res 				AT%QW28 : DINT := 0;  // Reserve
 
-
 // Globale Variabelen
 // Bool Statussen
-	systeemStatus 			AT%MX0.0 : BOOL := 0; // 0 = uit, 1 = actief
-	objectDetected			AT%MX0.1 : BOOL := 0;
-	ALM001					AT%MX0.2 : BOOL := 0; // missend object - alarm
+	systeemStatus 			AT%MX0.5 : BOOL := 0; // 0 = uit, 1 = actief
+	objectDetected			AT%MX0.6 : BOOL := 0;
+	ALM001					AT%MX0.7 : BOOL := 0; // missend object - alarm
 	
 // INT&DINT&REAL opslag
-	PRG1_Status				AT%MW10 : INT := 0; 	// 0 = idle, 1 = running, 2 = fault	
+	PRG1_Status				AT%MW10 : INT := 0; 	// 1 = idle, 2 = running, 3 = fault	
 	ladingGewicht 			AT%MW12 : DINT := 0; 	// opslag gelezen gewicht
 	berekendeSnelheid		AT%MW14 : DINT;
 	transportBaanVoortgang 	AT%MW16 : DINT;
 	transportBaanEinde		AT%MW18 : UINT := 800;
-//	cyclusTijd				AT%MW20 : TIME := T#10MS;
-	
-	//variabelen voor snelheidberekening
 
 	
 	
 END_VAR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ]]></Declaration>
   </GVL>
