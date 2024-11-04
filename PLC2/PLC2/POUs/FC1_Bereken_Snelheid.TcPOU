@@ -9,10 +9,10 @@ END_VAR
 
 VAR
     // Definieer de minimale en maximale gewichten en snelheden
-    MinGewicht  : REAL := 1.0;    // Minimum gewicht, bv. 1 kg
-    MaxGewicht  : REAL := 100.0;  // Maximum gewicht, bv. 100 kg
-    MinSpeed    : REAL := 50.0;    // Minimum snelheid, bv. 0 m/s
-    MaxSpeed    : REAL := 200.0;  // Maximum snelheid, bv. 200 m/s
+    MinGewicht  : REAL := 1.0;    // Minimum gewicht
+    MaxGewicht  : REAL := 100.0;  // Maximum gewicht
+    MinSpeed    : REAL := 50.0;    // Minimum snelheid
+    MaxSpeed    : REAL := 200.0;  // Maximum snelheid
 
     BerekendeSnelheid : REAL;     // De berekende snelheid in REAL
     LaadgewichtReal   : REAL;     // Laadgewicht geconverteerd naar REAL

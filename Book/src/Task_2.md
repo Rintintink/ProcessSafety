@@ -7,13 +7,10 @@
 skinparam backgroundcolor transparent
 
 [*] -right-> ReadInputs : System Started
-ReadInputs --> PRG1_IDLE : PRG1 in status 1
-PRG1_IDLE --> ObjectDetected : LS_001 is HIGH
-PRG1_IDLE -> ALARM : Wait time expires
-
-
-ALARM -> ReadInputs : Alarm\nresetknop
-ALARM -> Outputs
+ReadInputs -d-> PRG1_IDLE : PRG1 in status 1
+PRG1_IDLE --> ObjectDetected : LS_001\nis HIGH
+PRG1_IDLE -d-> ALARM : Waittime\nexpires
+ALARM -> Outputs : Alarm\nresetknop
 ObjectDetected --> Outputs
 Outputs --> ReadInputs
 
@@ -34,6 +31,8 @@ State ObjectDetected {
 }
 
 State ALARM {
+    ALARM : Reset wachttijd
+    ALARM : Alarmstatus = true
 }
 
 State Outputs {

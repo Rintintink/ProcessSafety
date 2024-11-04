@@ -6,4 +6,4 @@ src = "src"
 title = "Luuk Vulkers, mdBook for Process & Safety"
 
 [preprocessor.plantuml]
-plantuml-cmd="http://localhost:8080"
+plantuml-cmd="http://localhost:8181"

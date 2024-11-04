@@ -22,7 +22,7 @@ state IDLE {
     
     IDLE : System is idle
     IDLE : Waiting for object detection
-    IDLE : 
+    
     State Detected {
         Detected : Calculate Speed
         
@@ -33,7 +33,7 @@ state IDLE {
 state RUNNING {
     
     RUNNING : Conveyer is running
-    RUNNING : Measures total runtime from speed
+    RUNNING : Calculates total runtime from speed
     RUNNING : Calculates progress from speed
 }
 
